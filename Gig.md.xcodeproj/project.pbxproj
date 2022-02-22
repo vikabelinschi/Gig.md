@@ -11,6 +11,9 @@
 		A381836127C4D6ED00D94DD0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381836027C4D6ED00D94DD0 /* ContentView.swift */; };
 		A381836327C4D6F500D94DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A381836227C4D6F500D94DD0 /* Assets.xcassets */; };
 		A381836627C4D6F500D94DD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A381836527C4D6F500D94DD0 /* Preview Assets.xcassets */; };
+		A381836E27C4EF7E00D94DD0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381836D27C4EF7E00D94DD0 /* LoginView.swift */; };
+		A381837027C4FED100D94DD0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381836F27C4FED100D94DD0 /* SignUpView.swift */; };
+		A381837227C5034C00D94DD0 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381837127C5034C00D94DD0 /* Checkbox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,10 @@
 		A381836027C4D6ED00D94DD0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A381836227C4D6F500D94DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A381836527C4D6F500D94DD0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A381836C27C4E55100D94DD0 /* Gig-md-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Gig-md-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A381836D27C4EF7E00D94DD0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A381836F27C4FED100D94DD0 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A381837127C5034C00D94DD0 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +58,12 @@
 		A381835D27C4D6ED00D94DD0 /* Gig.md */ = {
 			isa = PBXGroup;
 			children = (
+				A381836C27C4E55100D94DD0 /* Gig-md-Info.plist */,
 				A381835E27C4D6ED00D94DD0 /* Gig_mdApp.swift */,
 				A381836027C4D6ED00D94DD0 /* ContentView.swift */,
+				A381836D27C4EF7E00D94DD0 /* LoginView.swift */,
+				A381837127C5034C00D94DD0 /* Checkbox.swift */,
+				A381836F27C4FED100D94DD0 /* SignUpView.swift */,
 				A381836227C4D6F500D94DD0 /* Assets.xcassets */,
 				A381836427C4D6F500D94DD0 /* Preview Content */,
 			);
@@ -137,8 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A381837027C4FED100D94DD0 /* SignUpView.swift in Sources */,
+				A381836E27C4EF7E00D94DD0 /* LoginView.swift in Sources */,
 				A381836127C4D6ED00D94DD0 /* ContentView.swift in Sources */,
 				A381835F27C4D6ED00D94DD0 /* Gig_mdApp.swift in Sources */,
+				A381837227C5034C00D94DD0 /* Checkbox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +286,9 @@
 				DEVELOPMENT_TEAM = 4222XTR5H7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Gig-md-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -301,9 +315,9 @@
 				DEVELOPMENT_TEAM = 4222XTR5H7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Gig-md-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
