@@ -15,17 +15,8 @@ struct FeedView: View {
     var body: some View {
         
         NavigationView {
-            TabView {
-                JobListView(jobs: jobs)
-                    .tabItem {
-                        Label("Jobs", systemImage: "briefcase.fill")
-                    }
-                
-                WorkersListView(workers: workers)
-                    .tabItem {
-                        Label("Workers", systemImage: "person.3")
-                    }
-            }
+            CustomTabBar()
+                .position(x: 195, y: 1030)
             .navigationBarTitle("", displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -34,8 +25,6 @@ struct FeedView: View {
                             withAnimation {
                                 showingSheet.toggle()
                                 self.radius = 20
-                                print(showingSheet)
-                                
                             }
                         } label: {
                             Image(systemName: "line.3.horizontal")
