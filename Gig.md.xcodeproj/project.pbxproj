@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A365D7A627FD88AA00AE4647 /* FavoritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365D7A527FD88AA00AE4647 /* FavoritesButton.swift */; };
+		A365D7AA27FDA3D900AE4647 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365D7A927FDA3D900AE4647 /* MenuView.swift */; };
 		A381835F27C4D6ED00D94DD0 /* Gig_mdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381835E27C4D6ED00D94DD0 /* Gig_mdApp.swift */; };
 		A381836327C4D6F500D94DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A381836227C4D6F500D94DD0 /* Assets.xcassets */; };
 		A381836627C4D6F500D94DD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A381836527C4D6F500D94DD0 /* Preview Assets.xcassets */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		A365D7A527FD88AA00AE4647 /* FavoritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButton.swift; sourceTree = "<group>"; };
+		A365D7A927FDA3D900AE4647 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		A381835B27C4D6ED00D94DD0 /* Gig.md.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gig.md.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A381835E27C4D6ED00D94DD0 /* Gig_mdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gig_mdApp.swift; sourceTree = "<group>"; };
 		A381836227C4D6F500D94DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		A365D7A827FDA35000AE4647 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A365D7A927FDA3D900AE4647 /* MenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				A3C1C17927F5D41800C216C8 /* FeedView.swift in Sources */,
 				A3ABC79727FC632F00138E9C /* TestInfo.swift in Sources */,
 				A3C1C16627F1F06100C216C8 /* CustomTextField.swift in Sources */,
+				A365D7AA27FDA3D900AE4647 /* MenuView.swift in Sources */,
 				A3C1C16C27F5977500C216C8 /* ORView.swift in Sources */,
 				A381837027C4FED100D94DD0 /* SignUpView.swift in Sources */,
 				A3ABC79E27FC81FD00138E9C /* WorkersListView.swift in Sources */,

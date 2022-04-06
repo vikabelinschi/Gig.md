@@ -11,7 +11,7 @@ import SwiftUI
 struct Gig_mdApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            FeedView()
         }
     }
 }

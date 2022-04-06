@@ -9,6 +9,9 @@ import SwiftUI
 
 struct FeedView: View {
     
+    @State private var showingSheet = false
+    @State private var radius: CGFloat = 0.0
+    var screen = UIScreen.main.bounds
     var body: some View {
         
         NavigationView {
@@ -26,19 +29,36 @@ struct FeedView: View {
             .navigationBarTitle("", displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        
-                    }) {
-                        Image(systemName: "line.horizontal.3")
+                    VStack {
+                        Button() {
+                            withAnimation {
+                                showingSheet.toggle()
+                                self.radius = 20
+                                print(showingSheet)
+                                
+                            }
+                        } label: {
+                            Image(systemName: "line.3.horizontal")
+                        }
+                        if showingSheet {
+                            MenuView()
+                                .transition(.move(edge: .leading))
+                                .frame(width: screen.width/2, height: screen.height, alignment: .top)
+                                .position(x: 90, y: 320)
+                            
+                        }
                     }
                 }
             }
+            .blur(radius: radius)
         }
     }
 }
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView()
+        VStack {
+            FeedView()
+        }
     }
 }
