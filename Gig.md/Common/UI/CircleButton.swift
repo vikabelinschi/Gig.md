@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CircleButton: View {
-    @State var showPopUp = false
+    var showPopUp: Bool
     var action: () -> Void
     var geometry: GeometryProxy
     var body: some View {
@@ -32,7 +32,7 @@ struct CircleButton: View {
 struct Circle_Button_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geometry in
-            CircleButton(action: {
+            CircleButton(showPopUp: false, action: {
                 
             }, geometry: geometry)
     }

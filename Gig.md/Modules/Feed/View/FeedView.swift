@@ -9,10 +9,12 @@ import SwiftUI
 
 struct FeedView: View {
     
+   // var tabBarRouter: TabBarRouter
     @State var showPopUp = false
     @State private var showingSheet = false
     @State private var showingSortSheet = false
     @State private var radius: CGFloat = 0.0
+    @State private var radius2: CGFloat = 0.0
     var screen = UIScreen.main.bounds
     var body: some View {
         
@@ -21,6 +23,7 @@ struct FeedView: View {
                 VStack {
                        Spacer()
                     WorkersListView(workers: workers)
+                        .blur(radius: radius2)
                        Spacer()
                     ZStack {
                         if showPopUp {
@@ -29,9 +32,11 @@ struct FeedView: View {
                                             }
                         HStack {
                             TabBarIcon(width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "briefcase.fill", tabName: "Jobs")
-                            CircleButton(action: {
+                            CircleButton(showPopUp: showPopUp, action: {
                                 withAnimation {
                                     showPopUp.toggle()
+                                    self.radius2 = showPopUp ? 10 : 0
+                                    
                                 }
                             }, geometry: geometry)
                                 .offset(y: -geometry.size.height/8/2)

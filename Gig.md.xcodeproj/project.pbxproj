@@ -18,7 +18,7 @@
 		A381837227C5034C00D94DD0 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381837127C5034C00D94DD0 /* Checkbox.swift */; };
 		A381837427CFA62000D94DD0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381837327CFA61F00D94DD0 /* OnboardingView.swift */; };
 		A3A9C5AA27FED44B000F96E1 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5A927FED44B000F96E1 /* TabBarRouter.swift */; };
-		A3A9C5AC27FED5A3000F96E1 /* Circle Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5AB27FED5A3000F96E1 /* Circle Button.swift */; };
+		A3A9C5AC27FED5A3000F96E1 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5AB27FED5A3000F96E1 /* CircleButton.swift */; };
 		A3A9C5AE27FEF03D000F96E1 /* PlusMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5AD27FEF03D000F96E1 /* PlusMenuView.swift */; };
 		A3ABC79327FC4CF600138E9C /* JobRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79227FC4CF600138E9C /* JobRowView.swift */; };
 		A3ABC79527FC61FD00138E9C /* WorkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79427FC61FD00138E9C /* WorkerModel.swift */; };
@@ -48,7 +48,7 @@
 		A381837127C5034C00D94DD0 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		A381837327CFA61F00D94DD0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A3A9C5A927FED44B000F96E1 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
-		A3A9C5AB27FED5A3000F96E1 /* Circle Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Circle Button.swift"; sourceTree = "<group>"; };
+		A3A9C5AB27FED5A3000F96E1 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		A3A9C5AD27FEF03D000F96E1 /* PlusMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMenuView.swift; sourceTree = "<group>"; };
 		A3ABC79227FC4CF600138E9C /* JobRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRowView.swift; sourceTree = "<group>"; };
 		A3ABC79427FC61FD00138E9C /* WorkerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerModel.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 				A3C1C16927F5957600C216C8 /* CustomButton.swift */,
 				A365D7A527FD88AA00AE4647 /* FavoritesButton.swift */,
 				A33A396427FDD77D00FEC51C /* TabBarIcon.swift */,
-				A3A9C5AB27FED5A3000F96E1 /* Circle Button.swift */,
+				A3A9C5AB27FED5A3000F96E1 /* CircleButton.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -334,7 +334,7 @@
 				A3C1C16A27F5957600C216C8 /* CustomButton.swift in Sources */,
 				A3ABC79327FC4CF600138E9C /* JobRowView.swift in Sources */,
 				A3ABC79A27FC6B0900138E9C /* WorkerRowView.swift in Sources */,
-				A3A9C5AC27FED5A3000F96E1 /* Circle Button.swift in Sources */,
+				A3A9C5AC27FED5A3000F96E1 /* CircleButton.swift in Sources */,
 				A381836E27C4EF7E00D94DD0 /* LoginView.swift in Sources */,
 				A3C1C17C27F5D68C00C216C8 /* JobModel.swift in Sources */,
 				A3A9C5AE27FEF03D000F96E1 /* PlusMenuView.swift in Sources */,
