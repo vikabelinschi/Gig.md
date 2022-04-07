@@ -15,8 +15,33 @@ struct FeedView: View {
     var body: some View {
         
         NavigationView {
-            CustomTabBar()
-                .position(x: 195, y: 1030)
+            GeometryReader { geometry in
+                VStack {
+                       Spacer()
+                    WorkersListView(workers: workers)
+                       Spacer()
+                    HStack {
+                        TabBarIcon(width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "briefcase.fill", tabName: "Jobs")
+                        ZStack {
+                             Circle()
+                                 .foregroundColor(.white)
+                                 .frame(width: geometry.size.width/7, height: geometry.size.width/7)
+                                 .shadow(radius: 4)
+                            Image(systemName: "plus.circle.fill")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: abs((geometry.size.width/7)-6) , height: abs((geometry.size.width/7)-6))
+                                    .foregroundColor(Color("workers"))
+                         } .offset(y: -geometry.size.height/8/2)
+                        
+                        TabBarIcon(width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "person.2.fill", tabName: "Workers")
+                     }
+                    .frame(width: geometry.size.width, height: geometry.size.height/8)
+                    .background(Color("tabBar").shadow(radius: 2))
+                }
+                .edgesIgnoringSafeArea(.bottom)
+                .padding(.horizontal, -4)
+            }
             .navigationBarTitle("", displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

@@ -64,7 +64,7 @@ struct MenuView: View{
                 }
              //   .padding()
                 //.frame(maxWidth: .infinity, alignment: .leading)
-            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }
