@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Gig_mdApp: App {
+    
+    @StateObject var tabBarRouter = TabBarRouter()
     var body: some Scene {
         WindowGroup {
-            FeedView()
+            FeedView(tabBarRouter: tabBarRouter)
         }
     }
 }

@@ -135,6 +135,39 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		A3A9C5AF27FEFD16000F96E1 /* Sorter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sorter;
+			path = ../../Sorter;
+			sourceTree = "<group>";
+		};
+		A3A9C5B027FEFD24000F96E1 /* Sorter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sorter;
+			sourceTree = "<group>";
+		};
+		A3A9C5B127FEFD2B000F96E1 /* Jobs */ = {
+			isa = PBXGroup;
+			children = (
+				A3ABC79B27FC81B000138E9C /* JobListView.swift */,
+				A3ABC79227FC4CF600138E9C /* JobRowView.swift */,
+			);
+			path = Jobs;
+			sourceTree = "<group>";
+		};
+		A3A9C5B227FEFD2F000F96E1 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				A3ABC79927FC6B0900138E9C /* WorkerRowView.swift */,
+				A3ABC79D27FC81FD00138E9C /* WorkersListView.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
 		A3C1C16D27F597D900C216C8 /* LoginModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,12 +266,12 @@
 		A3C1C17727F5D40A00C216C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A3A9C5AF27FEFD16000F96E1 /* Sorter */,
+				A3A9C5B227FEFD2F000F96E1 /* Workers */,
+				A3A9C5B127FEFD2B000F96E1 /* Jobs */,
+				A3A9C5B027FEFD24000F96E1 /* Sorter */,
 				A3C1C17827F5D41800C216C8 /* FeedView.swift */,
 				A3A9C5AD27FEF03D000F96E1 /* PlusMenuView.swift */,
-				A3ABC79B27FC81B000138E9C /* JobListView.swift */,
-				A3ABC79227FC4CF600138E9C /* JobRowView.swift */,
-				A3ABC79927FC6B0900138E9C /* WorkerRowView.swift */,
-				A3ABC79D27FC81FD00138E9C /* WorkersListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

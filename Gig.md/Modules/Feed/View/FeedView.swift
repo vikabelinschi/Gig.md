@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FeedView: View {
     
-   // var tabBarRouter: TabBarRouter
+    @StateObject var tabBarRouter: TabBarRouter
     @State var showPopUp = false
     @State private var showingSheet = false
     @State private var showingSortSheet = false
@@ -21,30 +21,35 @@ struct FeedView: View {
         NavigationView {
             GeometryReader { geometry in
                 VStack {
-                       Spacer()
-                    WorkersListView(workers: workers)
-                        .blur(radius: radius2)
-                       Spacer()
+                    Spacer()
+                    switch tabBarRouter.currentPage {
+                    case .jobs:
+                        JobListView(jobs: jobs)
+                            .blur(radius: radius2)
+                    case .workers:
+                        WorkersListView(workers: workers)
+                            .blur(radius: radius2)
+                    }
+                    Spacer()
                     ZStack {
                         if showPopUp {
-                                                PlusMenuView(widthAndHeight: geometry.size.width/7)
-                                                    .offset(y: -geometry.size.height/6)
-                                            }
+                            PlusMenuView(widthAndHeight: geometry.size.width/7)
+                                .offset(y: -geometry.size.height/6)
+                        }
                         HStack {
-                            TabBarIcon(width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "briefcase.fill", tabName: "Jobs")
+                            TabBarIcon(tabBarRouter: tabBarRouter, assignedPage: .jobs, width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "briefcase.fill", tabName: "Jobs")
                             CircleButton(showPopUp: showPopUp, action: {
                                 withAnimation {
                                     showPopUp.toggle()
                                     self.radius2 = showPopUp ? 10 : 0
-                                    
                                 }
                             }, geometry: geometry)
                                 .offset(y: -geometry.size.height/8/2)
                             
-                            TabBarIcon(width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "person.2.fill", tabName: "Workers")
-                         }
+                            TabBarIcon(tabBarRouter: tabBarRouter, assignedPage: .workers, width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "person.2.fill", tabName: "Workers")
+                        }
                         .frame(width: geometry.size.width, height: geometry.size.height/8)
-                    .background(Color("tabBar").shadow(radius: 2))
+                        .background(Color("tabBar").shadow(radius: 2))
                     }
                 }
                 .edgesIgnoringSafeArea(.bottom)
@@ -93,7 +98,7 @@ struct FeedView: View {
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            FeedView()
+            FeedView(tabBarRouter: TabBarRouter())
         }
     }
 }

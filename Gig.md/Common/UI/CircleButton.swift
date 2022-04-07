@@ -29,7 +29,7 @@ struct CircleButton: View {
     }
 }
 
-struct Circle_Button_Previews: PreviewProvider {
+struct CircleButton_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geometry in
             CircleButton(showPopUp: false, action: {

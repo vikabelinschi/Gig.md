@@ -9,13 +9,16 @@ import SwiftUI
 
 struct TabBarIcon: View {
      
+    @StateObject var tabBarRouter: TabBarRouter
+      let assignedPage: Page
+    
      let width, height: CGFloat
      let systemIconName, tabName: String
      
      
     var body: some View {
         Button(action: {
-            
+            tabBarRouter.currentPage = assignedPage
         }) {
             VStack {
                 Image(systemName: systemIconName)
@@ -27,7 +30,7 @@ struct TabBarIcon: View {
                     .font(.footnote)
                 Spacer()
             }
-            .foregroundColor(.gray)
+            .foregroundColor(tabBarRouter.currentPage == assignedPage ? Color("workers") : .gray)
         }
     }
 }
