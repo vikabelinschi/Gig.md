@@ -9,7 +9,9 @@ import SwiftUI
 
 struct FeedView: View {
     
+    @State var showPopUp = false
     @State private var showingSheet = false
+    @State private var showingSortSheet = false
     @State private var radius: CGFloat = 0.0
     var screen = UIScreen.main.bounds
     var body: some View {
@@ -20,24 +22,25 @@ struct FeedView: View {
                        Spacer()
                     WorkersListView(workers: workers)
                        Spacer()
-                    HStack {
-                        TabBarIcon(width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "briefcase.fill", tabName: "Jobs")
-                        ZStack {
-                             Circle()
-                                 .foregroundColor(.white)
-                                 .frame(width: geometry.size.width/7, height: geometry.size.width/7)
-                                 .shadow(radius: 4)
-                            Image(systemName: "plus.circle.fill")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: abs((geometry.size.width/7)-6) , height: abs((geometry.size.width/7)-6))
-                                    .foregroundColor(Color("workers"))
-                         } .offset(y: -geometry.size.height/8/2)
-                        
-                        TabBarIcon(width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "person.2.fill", tabName: "Workers")
-                     }
-                    .frame(width: geometry.size.width, height: geometry.size.height/8)
+                    ZStack {
+                        if showPopUp {
+                                                PlusMenuView(widthAndHeight: geometry.size.width/7)
+                                                    .offset(y: -geometry.size.height/6)
+                                            }
+                        HStack {
+                            TabBarIcon(width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "briefcase.fill", tabName: "Jobs")
+                            CircleButton(action: {
+                                withAnimation {
+                                    showPopUp.toggle()
+                                }
+                            }, geometry: geometry)
+                                .offset(y: -geometry.size.height/8/2)
+                            
+                            TabBarIcon(width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "person.2.fill", tabName: "Workers")
+                         }
+                        .frame(width: geometry.size.width, height: geometry.size.height/8)
                     .background(Color("tabBar").shadow(radius: 2))
+                    }
                 }
                 .edgesIgnoringSafeArea(.bottom)
                 .padding(.horizontal, -4)
@@ -60,6 +63,19 @@ struct FeedView: View {
                                 .frame(width: screen.width/2, height: screen.height, alignment: .top)
                                 .position(x: 90, y: 320)
                             
+                        }
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    VStack {
+                        Button() {
+                            withAnimation {
+                                showingSortSheet.toggle()
+                            }
+                        } label: {
+                            Image(systemName: "arrow.up.arrow.down")
+                                .resizable()
+                                .frame(width: 19, height: 15)
                         }
                     }
                 }

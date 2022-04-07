@@ -17,6 +17,9 @@
 		A381837027C4FED100D94DD0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381836F27C4FED100D94DD0 /* SignUpView.swift */; };
 		A381837227C5034C00D94DD0 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381837127C5034C00D94DD0 /* Checkbox.swift */; };
 		A381837427CFA62000D94DD0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381837327CFA61F00D94DD0 /* OnboardingView.swift */; };
+		A3A9C5AA27FED44B000F96E1 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5A927FED44B000F96E1 /* TabBarRouter.swift */; };
+		A3A9C5AC27FED5A3000F96E1 /* Circle Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5AB27FED5A3000F96E1 /* Circle Button.swift */; };
+		A3A9C5AE27FEF03D000F96E1 /* PlusMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5AD27FEF03D000F96E1 /* PlusMenuView.swift */; };
 		A3ABC79327FC4CF600138E9C /* JobRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79227FC4CF600138E9C /* JobRowView.swift */; };
 		A3ABC79527FC61FD00138E9C /* WorkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79427FC61FD00138E9C /* WorkerModel.swift */; };
 		A3ABC79727FC632F00138E9C /* TestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79627FC632F00138E9C /* TestInfo.swift */; };
@@ -44,6 +47,9 @@
 		A381836F27C4FED100D94DD0 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A381837127C5034C00D94DD0 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		A381837327CFA61F00D94DD0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A3A9C5A927FED44B000F96E1 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
+		A3A9C5AB27FED5A3000F96E1 /* Circle Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Circle Button.swift"; sourceTree = "<group>"; };
+		A3A9C5AD27FEF03D000F96E1 /* PlusMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMenuView.swift; sourceTree = "<group>"; };
 		A3ABC79227FC4CF600138E9C /* JobRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRowView.swift; sourceTree = "<group>"; };
 		A3ABC79427FC61FD00138E9C /* WorkerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerModel.swift; sourceTree = "<group>"; };
 		A3ABC79627FC632F00138E9C /* TestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInfo.swift; sourceTree = "<group>"; };
@@ -121,6 +127,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A3A9C5A827FED43D000F96E1 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A3A9C5A927FED44B000F96E1 /* TabBarRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		A3C1C16D27F597D900C216C8 /* LoginModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +187,7 @@
 				A3C1C16927F5957600C216C8 /* CustomButton.swift */,
 				A365D7A527FD88AA00AE4647 /* FavoritesButton.swift */,
 				A33A396427FDD77D00FEC51C /* TabBarIcon.swift */,
+				A3A9C5AB27FED5A3000F96E1 /* Circle Button.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -208,6 +223,7 @@
 		A3C1C17627F5D3FA00C216C8 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				A3A9C5A827FED43D000F96E1 /* Router */,
 				A3C1C17A27F5D67E00C216C8 /* Model */,
 				A3C1C17727F5D40A00C216C8 /* View */,
 			);
@@ -218,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				A3C1C17827F5D41800C216C8 /* FeedView.swift */,
+				A3A9C5AD27FEF03D000F96E1 /* PlusMenuView.swift */,
 				A3ABC79B27FC81B000138E9C /* JobListView.swift */,
 				A3ABC79227FC4CF600138E9C /* JobRowView.swift */,
 				A3ABC79927FC6B0900138E9C /* WorkerRowView.swift */,
@@ -305,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3A9C5AA27FED44B000F96E1 /* TabBarRouter.swift in Sources */,
 				A3C1C17927F5D41800C216C8 /* FeedView.swift in Sources */,
 				A3ABC79727FC632F00138E9C /* TestInfo.swift in Sources */,
 				A3C1C16627F1F06100C216C8 /* CustomTextField.swift in Sources */,
@@ -316,8 +334,10 @@
 				A3C1C16A27F5957600C216C8 /* CustomButton.swift in Sources */,
 				A3ABC79327FC4CF600138E9C /* JobRowView.swift in Sources */,
 				A3ABC79A27FC6B0900138E9C /* WorkerRowView.swift in Sources */,
+				A3A9C5AC27FED5A3000F96E1 /* Circle Button.swift in Sources */,
 				A381836E27C4EF7E00D94DD0 /* LoginView.swift in Sources */,
 				A3C1C17C27F5D68C00C216C8 /* JobModel.swift in Sources */,
+				A3A9C5AE27FEF03D000F96E1 /* PlusMenuView.swift in Sources */,
 				A381837427CFA62000D94DD0 /* OnboardingView.swift in Sources */,
 				A3C1C16827F1F78D00C216C8 /* CustomExternalAuthButton.swift in Sources */,
 				A381835F27C4D6ED00D94DD0 /* Gig_mdApp.swift in Sources */,
@@ -452,6 +472,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gig.md/Preview Content\"";
@@ -470,6 +491,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "victoriabelinschi.Gig-md";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -481,6 +503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gig.md/Preview Content\"";
@@ -499,6 +522,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "victoriabelinschi.Gig-md";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
