@@ -18,7 +18,7 @@ struct PlusMenuView: View {
             }) {
                 ZStack {
                     Circle()
-                        .foregroundColor(Color("workers"))
+                        .foregroundColor(Color("darkPink"))
                         .frame(width: widthAndHeight, height: widthAndHeight)
                     Image(systemName: "briefcase.fill")
                         .resizable()
@@ -33,7 +33,7 @@ struct PlusMenuView: View {
             }) {
                 ZStack {
                     Circle()
-                        .foregroundColor(Color("workers"))
+                        .foregroundColor(Color("darkPink"))
                         .frame(width: widthAndHeight, height: widthAndHeight)
                     Image(systemName: "person.fill")
                         .resizable()

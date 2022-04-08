@@ -31,6 +31,7 @@ struct FeedView: View {
                             .blur(radius: radius2)
                     }
                     Spacer()
+                    Color.white.frame(height:CGFloat(3) / UIScreen.main.scale)
                     ZStack {
                         if showPopUp {
                             PlusMenuView(widthAndHeight: geometry.size.width/7)
@@ -44,12 +45,12 @@ struct FeedView: View {
                                     self.radius2 = showPopUp ? 10 : 0
                                 }
                             }, geometry: geometry)
-                                .offset(y: -geometry.size.height/8/2)
+                                .offset(y: -geometry.size.height/8/1.7)
                             
                             TabBarIcon(tabBarRouter: tabBarRouter, assignedPage: .workers, width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "person.2.fill", tabName: "Workers")
                         }
                         .frame(width: geometry.size.width, height: geometry.size.height/8)
-                        .background(Color("tabBar").shadow(radius: 2))
+                        .background(.clear)
                     }
                 }
                 .edgesIgnoringSafeArea(.bottom)
@@ -66,6 +67,7 @@ struct FeedView: View {
                             }
                         } label: {
                             Image(systemName: "line.3.horizontal")
+                                .foregroundColor(.white)
                         }
                         if showingSheet {
                             MenuView()
@@ -86,11 +88,14 @@ struct FeedView: View {
                             Image(systemName: "arrow.up.arrow.down")
                                 .resizable()
                                 .frame(width: 19, height: 15)
+                                .foregroundColor(.white)
                         }
                     }
                 }
             }
             .blur(radius: radius)
+            .background(
+                LinearGradient(gradient: Gradient(colors: [Color("darkBlue").opacity(0.8),Color("purple-mix").opacity(0.9), Color("pinkk")]), startPoint: .top, endPoint: .bottom))
         }
     }
 }

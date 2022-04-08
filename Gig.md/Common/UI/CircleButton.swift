@@ -23,7 +23,7 @@ struct CircleButton: View {
                             .aspectRatio(contentMode: .fit)
                             .rotationEffect(Angle(degrees: showPopUp ? 45 : 0))
                             .frame(width: abs((geometry.size.width/7)-6) , height: abs((geometry.size.width/7)-6))
-                            .foregroundColor(Color("workers"))
+                            .foregroundColor(Color("darkPink"))
             }
         })
     }

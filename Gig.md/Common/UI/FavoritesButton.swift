@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FavoritesButton: View {
     @State var isOn: Bool
+    var color: Color
     
     var imageName: String {
         if isOn {
@@ -22,7 +23,7 @@ struct FavoritesButton: View {
         if isOn {
             return .red
         } else {
-            return Color("workers")
+            return color
         }
     }
 
@@ -46,7 +47,7 @@ struct FavoritesButton_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black
-            FavoritesButton(isOn: false, action: {
+            FavoritesButton(isOn: false, color: .white, action: {
                 
             })
         }

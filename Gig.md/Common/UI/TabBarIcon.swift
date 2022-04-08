@@ -30,7 +30,7 @@ struct TabBarIcon: View {
                     .font(.footnote)
                 Spacer()
             }
-            .foregroundColor(tabBarRouter.currentPage == assignedPage ? Color("workers") : .gray)
+            .foregroundColor(tabBarRouter.currentPage == assignedPage ? Color("darkPink") : .white)
         }
     }
 }

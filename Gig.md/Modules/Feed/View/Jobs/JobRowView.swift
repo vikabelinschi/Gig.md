@@ -16,30 +16,32 @@ struct JobRowView: View {
                 Text(job.name)
                     .font(.system(size: 24, weight: .semibold, design: .default))
                 Text(job.employer)
+                    .foregroundColor(.white)
             }
             Spacer()
             VStack(alignment: .trailing) {
-                FavoritesButton(isOn: false, action: {
+                FavoritesButton(isOn: false, color: .white, action: {
                     
                 })
-            Text(job.price)
-                .font(.system(size: 24, weight: .semibold, design: .default))
-        }
+                Text(job.price)
+                    .font(.system(size: 24, weight: .semibold, design: .default))
+                
+            }
             
         }
-        .foregroundColor(Color("workers"))
+        .foregroundColor(.white)
         .frame(width: screen.width - 60)
         .padding(3)
-        .overlay(
-            RoundedRectangle(cornerRadius: 5)
-                .stroke(Color("workers"), lineWidth: 1)
-        )
-      //  .background(Color("workers"))
+        .background(Color("darkPink").opacity(0.5))
+        .cornerRadius(5)
     }
 }
 
 struct JobRowView_Previews: PreviewProvider {
     static var previews: some View {
+        ZStack {
+            Color.black
         JobRowView(job: job1)
+    }
     }
 }

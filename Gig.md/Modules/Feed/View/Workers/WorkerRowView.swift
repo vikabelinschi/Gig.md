@@ -28,17 +28,15 @@ struct WorkerRowView: View {
             }
             Spacer()
             VStack(alignment: .trailing) {
-                FavoritesButton(isOn: false, action: {
+                FavoritesButton(isOn: false, color: .white, action: {
                 })
             }
         }
-        .foregroundColor(Color("workers"))
+        .foregroundColor(.white)
         .frame(width: screen.width - 60)
         .padding(3)
-        .overlay(
-            RoundedRectangle(cornerRadius: 5)
-                .stroke(.blue, lineWidth: 1)
-        )
+        .background(Color("darkPink").opacity(0.5))
+        .cornerRadius(5)
     }
     
     func isSkillLast(_ skill: String) -> Bool {
