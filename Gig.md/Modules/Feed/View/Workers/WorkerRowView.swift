@@ -35,7 +35,7 @@ struct WorkerRowView: View {
         .foregroundColor(.white)
         .frame(width: screen.width - 60)
         .padding(3)
-        .background(Color("darkPink").opacity(0.5))
+        .background(Color("darkPink").opacity(0.3))
         .cornerRadius(5)
     }
     

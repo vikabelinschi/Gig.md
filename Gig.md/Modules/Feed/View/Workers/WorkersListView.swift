@@ -15,7 +15,7 @@ struct WorkersListView: View {
                 ForEach(workers, id: \.self) { worker in
                     WorkerRowView(worker: worker)
                 }
-                .padding(8)
+                .padding(9)
             }
         }
     }

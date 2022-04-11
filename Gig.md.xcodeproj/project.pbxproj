@@ -21,6 +21,8 @@
 		A3A9C5AC27FED5A3000F96E1 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5AB27FED5A3000F96E1 /* CircleButton.swift */; };
 		A3A9C5AE27FEF03D000F96E1 /* PlusMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5AD27FEF03D000F96E1 /* PlusMenuView.swift */; };
 		A3A9C5BC280049A8000F96E1 /* DetailPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5BB280049A8000F96E1 /* DetailPageView.swift */; };
+		A3A9C5C0280076BD000F96E1 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5BF280076BD000F96E1 /* SplashView.swift */; };
+		A3A9C5C228041BFE000F96E1 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5C128041BFE000F96E1 /* MenuButtonView.swift */; };
 		A3ABC79327FC4CF600138E9C /* JobRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79227FC4CF600138E9C /* JobRowView.swift */; };
 		A3ABC79527FC61FD00138E9C /* WorkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79427FC61FD00138E9C /* WorkerModel.swift */; };
 		A3ABC79727FC632F00138E9C /* TestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79627FC632F00138E9C /* TestInfo.swift */; };
@@ -52,6 +54,8 @@
 		A3A9C5AB27FED5A3000F96E1 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		A3A9C5AD27FEF03D000F96E1 /* PlusMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMenuView.swift; sourceTree = "<group>"; };
 		A3A9C5BB280049A8000F96E1 /* DetailPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageView.swift; sourceTree = "<group>"; };
+		A3A9C5BF280076BD000F96E1 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		A3A9C5C128041BFE000F96E1 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		A3ABC79227FC4CF600138E9C /* JobRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRowView.swift; sourceTree = "<group>"; };
 		A3ABC79427FC61FD00138E9C /* WorkerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerModel.swift; sourceTree = "<group>"; };
 		A3ABC79627FC632F00138E9C /* TestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInfo.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				A365D7A927FDA3D900AE4647 /* MenuView.swift */,
+				A3A9C5C128041BFE000F96E1 /* MenuButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -137,14 +142,6 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		A3A9C5AF27FEFD16000F96E1 /* Sorter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Sorter;
-			path = ../../Sorter;
-			sourceTree = "<group>";
-		};
 		A3A9C5B027FEFD24000F96E1 /* Sorter */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +179,22 @@
 			isa = PBXGroup;
 			children = (
 				A3A9C5BB280049A8000F96E1 /* DetailPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A3A9C5BD280076A9000F96E1 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A3A9C5BE280076B0000F96E1 /* View */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		A3A9C5BE280076B0000F96E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3A9C5BF280076BD000F96E1 /* SplashView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,6 +259,7 @@
 		A3C1C17327F5D3A100C216C8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A3A9C5BD280076A9000F96E1 /* Splash */,
 				A3A9C5B92800498E000F96E1 /* DetailPage */,
 				A365D7A727FDA34A00AE4647 /* Menu */,
 				A3C1C17627F5D3FA00C216C8 /* Feed */,
@@ -285,7 +299,6 @@
 		A3C1C17727F5D40A00C216C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A3A9C5AF27FEFD16000F96E1 /* Sorter */,
 				A3A9C5B227FEFD2F000F96E1 /* Workers */,
 				A3A9C5B127FEFD2B000F96E1 /* Jobs */,
 				A3A9C5B027FEFD24000F96E1 /* Sorter */,
@@ -376,6 +389,8 @@
 			files = (
 				A3A9C5AA27FED44B000F96E1 /* TabBarRouter.swift in Sources */,
 				A3C1C17927F5D41800C216C8 /* FeedView.swift in Sources */,
+				A3A9C5C0280076BD000F96E1 /* SplashView.swift in Sources */,
+				A3A9C5C228041BFE000F96E1 /* MenuButtonView.swift in Sources */,
 				A3ABC79727FC632F00138E9C /* TestInfo.swift in Sources */,
 				A3C1C16627F1F06100C216C8 /* CustomTextField.swift in Sources */,
 				A365D7AA27FDA3D900AE4647 /* MenuView.swift in Sources */,

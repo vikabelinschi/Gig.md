@@ -1,4 +1,4 @@
-//
+`//
 //  JobListView.swift
 //  Gig.md
 //
@@ -10,16 +10,13 @@ import SwiftUI
 struct JobListView: View {
     var jobs: [JobModel]
     var body: some View {
-            ScrollView {
-                VStack {
-                    ForEach(jobs,  id: \.self) { job in
+        ScrollView {
+            VStack {
+                ForEach(jobs,  id: \.self) { job in
                     JobRowView(job: job)
-                        .padding(8)
-                        
+                        .padding(10)                    
                 }
             }
-            
-            
         }
     }
 }
@@ -29,3 +26,4 @@ struct JobListView_Previews: PreviewProvider {
         JobListView(jobs: jobs)
     }
 }
+`

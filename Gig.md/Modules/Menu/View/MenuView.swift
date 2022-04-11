@@ -12,59 +12,29 @@ struct MenuView: View{
         ZStack {
             Color.white
                 .zIndex(0)
-                VStack(alignment: .leading){
-                    HStack {
-                        Button {
-                        } label: {
-                            Image(systemName: "x.circle.fill")
-                               // .resizable()
-                                .foregroundColor(.gray)
-                        }
-                       // .padding(.leading, 160)
-                        .padding(.top, 20)
+            HStack {
+                VStack(alignment: .leading, spacing: 30){
+                    MenuButtonView(imageName: "person", text: "Profile")
+                        .padding(.top, 50)
+                    MenuButtonView(imageName: "envelope", text: "Messages")
+                    MenuButtonView(imageName: "gear", text: "Settings")
+                        Spacer()
+                    MenuButtonView(imageName: "rectangle.portrait.and.arrow.right", text: "Sign Out")
+                        .padding(.bottom, 20)
                     }
-                    HStack{
-                        Image(systemName: "person")
-                            .foregroundColor(.gray)
-                            .imageScale(.large)
-                        Text("Profile")
-                            .foregroundColor(.gray)
-                            .font(.headline)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                VStack {
+                    Button {
+                    } label: {
+                        Image(systemName: "x.circle.fill")
+                            .foregroundColor(Color("darkPink"))
                     }
-                    .padding(.top, 30)
-                    HStack{
-                        Image(systemName: "envelope")
-                            .foregroundColor(.gray)
-                            .imageScale(.large)
-                        Text("Messages")
-                            .foregroundColor(.gray)
-                            .font(.headline)
-                    }
-                    .padding(.top, 30)
-                    HStack{
-                        Image(systemName: "gear")
-                            .foregroundColor(.gray)
-                            .imageScale(.large)
-                        Text("Settings")
-                            .foregroundColor(.gray)
-                            .font(.headline)
-                    }
-                    .padding(.top, 30)
+                .padding(.trailing, 5)
+                .padding(.top, 40)
                     Spacer()
-                    HStack{
-                        Image(systemName: "rectangle.portrait.and.arrow.right")
-                            .foregroundColor(.gray)
-                            .imageScale(.large)
-                        Text("Sign Out")
-                            .foregroundColor(.gray)
-                            .font(.headline)
-                    }
-                    .padding(.bottom, 30)
-                    
                 }
-             //   .padding()
-                //.frame(maxWidth: .infinity, alignment: .leading)
-                .edgesIgnoringSafeArea(.all)
+            }
         }
     }
 }
