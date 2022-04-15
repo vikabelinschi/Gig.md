@@ -21,12 +21,20 @@ struct FeedView: View {
             GeometryReader { geometry in
                 ZStack {
                     if showingSheet {
-                        MenuView()
+                        MenuView(showSheet: showingSheet)
                             .transition(.move(edge: .leading))
                             .frame(width: screen.width/1.2, height: screen.height, alignment: .leading)
                             .zIndex(4)
                             .edgesIgnoringSafeArea(.all)
                             .offset(x: -32)
+                    }
+                    if showingSortSheet {
+                        FilterView()
+                            .transition(.move(edge: .bottom))
+                            .frame(width: screen.width, height: screen.height/1.4, alignment: .bottom)
+                            .zIndex(4)
+                            .edgesIgnoringSafeArea(.all)
+//                            .offset(x: -32)
                     }
                     VStack {
                         Spacer()
@@ -95,10 +103,15 @@ struct FeedView: View {
                     }
                 }
             }
+            
             .background(
-                LinearGradient(gradient: Gradient(colors: [Color("darkBlue").opacity(0.8),Color("purple-mix").opacity(0.9), Color("pinkk")]), startPoint: .top, endPoint: .bottom))
+                LinearGradient(gradient: Gradient(colors: [Color("darkBlue").opacity(0.55),Color("purple-mix").opacity(0.7), Color("p").opacity(0.5)]), startPoint: .top, endPoint: .bottom))
         }
+//        .sheet(isPresented: $showingSortSheet) {
+//                    FilterView()
+//                }
     }
+    
 }
 
 struct FeedView_Previews: PreviewProvider {

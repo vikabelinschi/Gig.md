@@ -15,7 +15,6 @@ struct JobListView: View {
                     ForEach(jobs,  id: \.self) { job in
                     JobRowView(job: job)
                         .padding(10)
-                        
                 }
             }
         }

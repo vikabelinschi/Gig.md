@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct MenuView: View{
-    var body: some View{
+struct MenuView: View {
+    @State var showSheet: Bool
+    var body: some View {
         ZStack {
             Color.white
                 .zIndex(0)
@@ -26,6 +27,9 @@ struct MenuView: View{
                     .frame(maxWidth: .infinity, alignment: .leading)
                 VStack {
                     Button {
+                        withAnimation {
+                            showSheet.toggle()
+                        }
                     } label: {
                         Image(systemName: "x.circle.fill")
                             .foregroundColor(Color("darkPink"))
@@ -41,6 +45,6 @@ struct MenuView: View{
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View{
-        MenuView()
+        MenuView(showSheet: false)
     }
 }

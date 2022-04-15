@@ -13,7 +13,8 @@ struct Gig_mdApp: App {
     @StateObject var tabBarRouter = TabBarRouter()
     var body: some Scene {
         WindowGroup {
-            FeedView(tabBarRouter: tabBarRouter)
+          //  FeedView(tabBarRouter: tabBarRouter)
+            DropDown()
         }
     }
 }

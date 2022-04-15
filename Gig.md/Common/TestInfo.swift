@@ -28,3 +28,5 @@ let worker10 = WorkerModel(id: "1", firstName: "Lady", lastName: "Gaga", email: 
 
 var jobs: [JobModel] = [job1, job2, job3, job4, job5, job6, job7]
 var workers: [WorkerModel] = [worker1, worker2, worker3, worker4, worker5, worker6, worker7, worker8, worker9, worker10]
+
+let jobCategories: [String] = ["Housekeeper", "childCare", "driver", "painter", "construction worker", "Cook", "Translator"]
