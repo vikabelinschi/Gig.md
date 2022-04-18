@@ -25,6 +25,8 @@
 		A3A9C5C228041BFE000F96E1 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5C128041BFE000F96E1 /* MenuButtonView.swift */; };
 		A3A9C5C628084958000F96E1 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5C528084958000F96E1 /* FilterView.swift */; };
 		A3A9C5C928085FFD000F96E1 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5C828085FFD000F96E1 /* DropDown.swift */; };
+		A3A9C5CB280D5382000F96E1 /* DoubleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5CA280D5382000F96E1 /* DoubleSlider.swift */; };
+		A3A9C5CF280DA931000F96E1 /* AddSmthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5CE280DA931000F96E1 /* AddSmthView.swift */; };
 		A3ABC79327FC4CF600138E9C /* JobRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79227FC4CF600138E9C /* JobRowView.swift */; };
 		A3ABC79527FC61FD00138E9C /* WorkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79427FC61FD00138E9C /* WorkerModel.swift */; };
 		A3ABC79727FC632F00138E9C /* TestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79627FC632F00138E9C /* TestInfo.swift */; };
@@ -60,6 +62,8 @@
 		A3A9C5C128041BFE000F96E1 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		A3A9C5C528084958000F96E1 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		A3A9C5C828085FFD000F96E1 /* DropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
+		A3A9C5CA280D5382000F96E1 /* DoubleSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleSlider.swift; sourceTree = "<group>"; };
+		A3A9C5CE280DA931000F96E1 /* AddSmthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSmthView.swift; sourceTree = "<group>"; };
 		A3ABC79227FC4CF600138E9C /* JobRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRowView.swift; sourceTree = "<group>"; };
 		A3ABC79427FC61FD00138E9C /* WorkerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerModel.swift; sourceTree = "<group>"; };
 		A3ABC79627FC632F00138E9C /* TestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInfo.swift; sourceTree = "<group>"; };
@@ -228,6 +232,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A3A9C5CC280DA919000F96E1 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				A3A9C5CD280DA923000F96E1 /* View */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		A3A9C5CD280DA923000F96E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3A9C5CE280DA931000F96E1 /* AddSmthView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A3C1C16D27F597D900C216C8 /* LoginModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				A3C1C16B27F5977500C216C8 /* ORView.swift */,
+				A3A9C5CA280D5382000F96E1 /* DoubleSlider.swift */,
 				A3C1C16527F1F06100C216C8 /* CustomTextField.swift */,
 				A381837127C5034C00D94DD0 /* Checkbox.swift */,
 				A3C1C16727F1F78D00C216C8 /* CustomExternalAuthButton.swift */,
@@ -288,6 +309,7 @@
 		A3C1C17327F5D3A100C216C8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A3A9C5CC280DA919000F96E1 /* Add */,
 				A3A9C5C328084948000F96E1 /* Filter */,
 				A3A9C5BD280076A9000F96E1 /* Splash */,
 				A3A9C5B92800498E000F96E1 /* DetailPage */,
@@ -431,6 +453,7 @@
 				A3ABC79527FC61FD00138E9C /* WorkerModel.swift in Sources */,
 				A3C1C16A27F5957600C216C8 /* CustomButton.swift in Sources */,
 				A3ABC79327FC4CF600138E9C /* JobRowView.swift in Sources */,
+				A3A9C5CF280DA931000F96E1 /* AddSmthView.swift in Sources */,
 				A3ABC79A27FC6B0900138E9C /* WorkerRowView.swift in Sources */,
 				A3A9C5AC27FED5A3000F96E1 /* CircleButton.swift in Sources */,
 				A381836E27C4EF7E00D94DD0 /* LoginView.swift in Sources */,
@@ -441,6 +464,7 @@
 				A3A9C5BC280049A8000F96E1 /* DetailPageView.swift in Sources */,
 				A381835F27C4D6ED00D94DD0 /* Gig_mdApp.swift in Sources */,
 				A33A396527FDD77D00FEC51C /* TabBarIcon.swift in Sources */,
+				A3A9C5CB280D5382000F96E1 /* DoubleSlider.swift in Sources */,
 				A365D7A627FD88AA00AE4647 /* FavoritesButton.swift in Sources */,
 				A3ABC79C27FC81B000138E9C /* JobListView.swift in Sources */,
 				A3A9C5C928085FFD000F96E1 /* DropDown.swift in Sources */,

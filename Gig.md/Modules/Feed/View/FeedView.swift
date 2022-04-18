@@ -31,10 +31,10 @@ struct FeedView: View {
                     if showingSortSheet {
                         FilterView()
                             .transition(.move(edge: .bottom))
-                            .frame(width: screen.width, height: screen.height/1.4, alignment: .bottom)
+                            .frame(width: screen.width, height: screen.height/1.5, alignment: .bottom)
                             .zIndex(4)
                             .edgesIgnoringSafeArea(.all)
-//                            .offset(x: -32)
+                            .offset(x: screen.minX, y: screen.minY + screen.height/7)
                     }
                     VStack {
                         Spacer()
@@ -93,6 +93,7 @@ struct FeedView: View {
                         Button() {
                             withAnimation {
                                 showingSortSheet.toggle()
+                                self.radius2 = showingSortSheet ? 20 : 0
                             }
                         } label: {
                             Image(systemName: "arrow.up.arrow.down")
