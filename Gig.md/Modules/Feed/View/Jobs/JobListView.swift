@@ -9,16 +9,36 @@ import SwiftUI
 
 struct JobListView: View {
     var jobs: [JobModel]
+    @State var tappedJob: Bool = false
+    @State var selectedJob: JobModel?
+    var screen = UIScreen.main.bounds
     var body: some View {
+        if !tappedJob {
             ScrollView {
                 VStack {
                     ForEach(jobs,  id: \.self) { job in
                     JobRowView(job: job)
                         .padding(10)
+                        .onTapGesture {
+                            withAnimation {
+                                self.selectedJob = job
+                                self.tappedJob.toggle()
+                            }
+                        }
                 }
             }
         }
     }
+        else {
+            if let selectedJob = selectedJob {
+                JobDetailPage(job: selectedJob)
+                    .frame(width: screen.width - 50)
+                    .onTapGesture {
+                        self.tappedJob.toggle()
+                    }
+            }
+        }
+}
 }
 
 struct JobListView_Previews: PreviewProvider {

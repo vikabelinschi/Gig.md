@@ -14,39 +14,24 @@ struct DetailPageView: View {
             Circle()
                 .foregroundColor(.white)
                 .frame(width: 80)
-                .offset(y: -220)
+                .offset(y: -285)
                 .zIndex(5)
             Image("1")
-//                .resizable()
-//                .frame(width: 70, height: 40)
-//                .zIndex(6)
-//                .clipShape(Circle())
-//                .resizable()
-//                .foregroundColor(.white)
-//                .padding(20)
-//                .zIndex(6)
-//                .clipShape(Circle())
-//                .aspectRatio(contentMode: .fill)
-//                .frame(width: 75, height: 75)
-//                .offset(y: -220)
                 .resizable()
                         .aspectRatio(contentMode: .fit)
                         .clipShape(Circle())
                         .frame(width: 150)
-                        .offset(y: -220)
+                        .offset(y: -285)
                         .zIndex(6)
             
             ZStack {
                 Color("darkPink").opacity(0.3)
-    //            Circle()
-    //                .foregroundColor(.white)
-    //                .offset(x: )
         
                 VStack {
                     Text(worker.firstName + " " + worker.lastName)
                         .padding(8)
                         .padding(.top, 30)
-                    VStack(alignment: .leading, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 20) {
                         Text("Description")
                             .bold()
                         Text(worker.description)
@@ -68,6 +53,18 @@ struct DetailPageView: View {
                             }
                         }
                     }
+                    Button {
+                        
+                    } label: {
+                        Text("Send message to \(worker.firstName)")
+                            .foregroundColor(Color("darkPink"))
+                            .padding(.horizontal, 30)
+                            .padding(.vertical,10)
+                            .background(.white)
+                            .cornerRadius(20)
+                            .padding()
+                    }
+
                 }
                 .foregroundColor(.white)
                 .padding()

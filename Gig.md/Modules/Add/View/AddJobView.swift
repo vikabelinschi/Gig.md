@@ -1,15 +1,22 @@
 //
-//  AddSmthView.swift
+//  AddJobView.swift
 //  Gig.md
 //
-//  Created by Victoria Belinschi on 18.04.2022.
+//  Created by Victoria Belinschi on 05.05.2022.
 //
 
 import SwiftUI
 
-struct AddSmthView: View {
+struct AddJobView: View {
     @State var description: String = ""
-    
+    @State var category: String = ""
+    @State var categories: [String] = []
+    enum FocusField: Hashable {
+       case field
+     }
+
+     @FocusState private var focusedField: FocusField?
+
     var body: some View {
             VStack(spacing: 20) {
                 VStack(alignment: .leading) {
@@ -23,24 +30,52 @@ struct AddSmthView: View {
                 }
                 .padding(.horizontal, 25)
                 VStack(alignment: .leading) {
-                    Text("Skills")
-                    TextField(" + Add new skill", text: $description)
+                    Text("Category")
+                    ForEach($categories, id: \.self) { category in
+                        TextField("", text: category)
+                            .foregroundColor(.white)
+                            .frame(height: 40)
+                            .padding(.horizontal, 8)
+                            .background(Color("darkPink").opacity(0.3))
+                            .focused($focusedField, equals: .field)
+                                     .onAppear {
+                                       self.focusedField = .field
+                                   }
+                    }
+                    Button {
+                        categories.append("")
+                    } label: {
+                        HStack {
+                            Text("+ Add new category")
+                                .padding(8)
+                            Spacer().frame(maxWidth:.infinity)
+                        }
+                        .frame(height: 40)
+                        .frame(width: UIScreen.main.bounds.width - 50)
+                    .background(Color("darkPink").opacity(0.3))
+                    }
+
+                }
+                .padding(.horizontal, 25)
+                VStack(alignment: .leading) {
+                    Text("Location")
+                    TextField(" Choose your Location", text: $description)
                         .foregroundColor(.white)
                         .frame(height: 40)
                         .background(Color("darkPink").opacity(0.3))
                 }
                 .padding(.horizontal, 25)
                 VStack(alignment: .leading) {
-                    Text("Education")
-                    TextField(" + Add education", text: $description)
+                    Text("Date and Time")
+                    TextField("Choose the date and time for the gig", text: $description)
                         .foregroundColor(.white)
                         .frame(height: 40)
                         .background(Color("darkPink").opacity(0.3))
                 }
                 .padding(.horizontal, 25)
                 VStack(alignment: .leading) {
-                    Text("Previous Experience")
-                    TextField(" + Add experience", text: $description)
+                    Text("Wage")
+                    TextField(" Set your gig wage", text: $description)
                         .foregroundColor(.white)
                         .frame(height: 40)
                         .background(Color("darkPink").opacity(0.3))
@@ -50,7 +85,7 @@ struct AddSmthView: View {
                 Button {
                     
                 } label: {
-                    Text("Post your worker profile")
+                    Text("Post your gig job")
                         .bold()
                         .padding()
                         .frame(width: UIScreen.main.bounds.width - 50)
@@ -64,32 +99,17 @@ struct AddSmthView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack {
-                        Text("Add your worker profile")
+                        Text("Add your gig job")
                             .font(.headline)
                             .foregroundColor(Color("darkPink"))
                     }
                 }
             }
-//            .navigationBarTitle("Add your worker profile", displayMode: .inline)
-//            .foregroundColor(Color("darkPink"))
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    Button() {
-//                        withAnimation {
-//                        }
-//                    } label: {
-//                        Image(systemName: "x.circle.fill")
-//                            .foregroundColor(Color("darkPink"))
-//                    }
-//                }
-//            }
- ///       }
+        }
     }
-    
-}
 
-struct AddSmthView_Previews: PreviewProvider {
+struct AddJobView_Previews: PreviewProvider {
     static var previews: some View {
-        AddSmthView()
+        AddJobView()
     }
 }

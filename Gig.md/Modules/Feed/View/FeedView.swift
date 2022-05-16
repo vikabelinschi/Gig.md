@@ -52,6 +52,7 @@ struct FeedView: View {
                             if showPopUp {
                                 PlusMenuView(widthAndHeight: geometry.size.width/7)
                                     .offset(y: -geometry.size.height/6)
+                                
                             }
                             HStack {
                                 TabBarIcon(tabBarRouter: tabBarRouter, assignedPage: .jobs, width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "briefcase.fill", tabName: "Jobs")
@@ -111,6 +112,7 @@ struct FeedView: View {
 //        .sheet(isPresented: $showingSortSheet) {
 //                    FilterView()
 //                }
+        .accentColor(Color("darkPink"))
     }
     
 }

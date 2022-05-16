@@ -10,35 +10,49 @@ import SwiftUI
 struct LoginView: View {
     @State var username: String = ""
     @State var password: String = ""
+    @State var signup: Bool = false
     var body: some View {
-        NavigationView {
-            VStack(spacing: 40) {
-                Spacer()
-                Image("logo")
-                    .resizable()
-                    .frame(width: 180, height: 60)
-                VStack(alignment: .leading) {
-                    CustomTextField(enteredText: username, placeholder: "Enter your email")
-                    CustomSecureField(enteredText: password, placeholder: "Enter your password")
-                    VStack(spacing: 20) {
-                        CustomButton(buttonText: "Sign In", buttonColor: .blue, textColor: .white)
-                        ORView()
-                        CustomExternalAuthButton(imageName: "google", buttonText: "Sign In with Google", buttonColor: .clear, textColor: .black, frameColor: .gray)
-                        CustomExternalAuthButton(imageName: "fbwww", buttonText: "Sign In with Facebook", buttonColor: Color("fbcolor"), textColor: .white, frameColor: .clear)
-                    }
-                }.padding()
-                    .frame(width: UIScreen.main.bounds.size.width - 20)
-                Spacer()
-                HStack {
-                    Text("Don't have an account?")
-                    NavigationLink(destination: SignUpView()) {
-                        Text("Sign Up")
+        if signup {
+            SignUpView()
+                .transition(.move(edge: .trailing))
+        } else {
+            NavigationView {
+                VStack(spacing: 40) {
+                    Spacer()
+                    Image("logo")
+                        .resizable()
+                        .frame(width: 180, height: 60)
+                    VStack(alignment: .leading) {
+                        CustomTextField(enteredText: username, placeholder: "Enter your email", color: Color("darkPink"), textColor: Color("darkPink"))
+                        CustomSecureField(enteredText: password, placeholder: "Enter your password", color: Color("darkPink"), textColor: Color("darkPink"))
+                        VStack(spacing: 20) {
+                            CustomButton(buttonText: "Sign In", buttonColor: Color("pinkk"), textColor: .white)
+                            ORView()
+                            CustomExternalAuthButton(imageName: "google", buttonText: "Sign In with Google", buttonColor: .clear, textColor: .black, frameColor: .gray)
+                            CustomExternalAuthButton(imageName: "fbwww", buttonText: "Sign In with Facebook", buttonColor: Color("fbcolor"), textColor: .white, frameColor: .clear)
+                        }
+                    }.padding()
+                        .frame(width: UIScreen.main.bounds.size.width - 20)
+                    Spacer()
+                    HStack {
+                        Text("Don't have an account?")
+                        Button {
+                            withAnimation {
+                                self.signup.toggle()
+                            }
+                        } label: {
+                            Text("Sign Up")
+                                .foregroundColor(Color("pinkk"))
+                        }
                     }
                 }
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
             }
-        }.navigationBarTitle("")
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
+            .background(.white)
+            .edgesIgnoringSafeArea(.all)
+        }
     }
 }
 

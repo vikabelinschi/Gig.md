@@ -10,37 +10,79 @@ import SwiftUI
 struct WorkersListView: View {
     var workers: [WorkerModel]
     @State var worker: WorkerModel?
+    @State var selectedWorker: WorkerModel?
     @State var workerTapped: Bool = false
     var screen = UIScreen.main.bounds
     var body: some View {
-        ScrollView {
-            if workerTapped {
-                if let worker = worker {
-
-                    DetailPageView(worker: worker)
-                        .frame(width: screen.width - 60)
-                   // .transition(.move(edge: .leading))
-                }
-            }
-            VStack {
-                ForEach(workers, id: \.self) { worker in
-                    WorkerRowView(worker: worker)
-                        .onTapGesture {
-                            withAnimation {
-                                self.worker = worker
-                                self.workerTapped.toggle()
+        if !workerTapped {
+            ScrollView {
+                VStack {
+                    ForEach(workers, id: \.self) { worker in
+                        WorkerRowView(worker: worker)
+                            .onTapGesture {
+                                withAnimation {
+                                    self.worker = worker
+                                    self.workerTapped.toggle()
+                                    self.selectedWorker = worker
+                                }
                             }
-//                            DetailPageView(worker: worker)
-                        }
+                    }
+                    .padding(9)
                 }
-                .padding(9)
             }
         }
+        else {
+            if let selectedWorker = selectedWorker {
+                DetailPageView(worker: selectedWorker)
+                    .frame(width: screen.width - 50)
+                    .onTapGesture {
+                        withAnimation {
+                            self.workerTapped.toggle()
+                        }
+                    }
+            }
+        }
+    }
+}
+//}
+//                    WorkerRowView(worker: worker)
+//                        .onTapGesture {
+//                            withAnimation {
+//                                self.worker = worker
+//                                self.workerTapped.toggle()
+//                            }
+//                        }
+//                    if workerTapped && (self.selectedWorker == worker) {
+//                        DetailPageView(worker: selectedWorker!)
+//                            .onTapGesture {
+//                                withAnimation {
+//                                self.workerTapped.toggle()
+//                                }
+//                            }
+//                        }
+//                    else {
+//                        WorkerRowView(worker: worker)
+//                            .onTapGesture {
+//                                withAnimation {
+//                                    self.worker = worker
+//                                    self.workerTapped.toggle()
+//                                    self.selectedWorker = worker
+                                //    DetailPageView(worker: selectedWorker!)
+//                                    if workerTapped {
+//                                        DetailPageView(worker: worker)
+//                                            .frame(width: screen.width - 60)
+//                                    }
+//                                }
+//                            }
+            
+//                            .sheet(isPresented: self.$workerTapped) { DetailPageView(worker: worker)
+             //   }
 //        .sheet(item: $worker) { item in
 //            DetailPageView(worker: item)
 //        }
-    }
-}
+ //   }
+//}
+
 
 struct WorkersListView_Previews: PreviewProvider {
     static var previews: some View {

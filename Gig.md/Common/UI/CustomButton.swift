@@ -11,8 +11,9 @@ struct CustomButton: View {
     var buttonText: String
     var buttonColor: Color
     var textColor: Color
+    var action: () -> () = {}
     var body: some View {
-        Button(action: {}) {
+        Button(action: action) {
             Text(buttonText)
                 .fontWeight(.semibold)
                 .foregroundColor(textColor)

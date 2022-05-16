@@ -10,11 +10,13 @@ import SwiftUI
 struct CustomTextField: View {
     @State var enteredText: String = ""
     var placeholder: String
+    var color: Color
+    var textColor: Color
     var body: some View {
         VStack(spacing: 4) {
             TextField(placeholder, text: $enteredText)
-                .foregroundColor(.black)
-        Color.blue.frame(height:CGFloat(3) / UIScreen.main.scale)
+                .foregroundColor(textColor)
+        color.frame(height:CGFloat(3) / UIScreen.main.scale)
             .padding(.bottom)
         }
     }
@@ -23,11 +25,33 @@ struct CustomTextField: View {
 struct CustomSecureField: View {
     @State var enteredText: String = ""
     var placeholder: String
+    var color: Color
+    var textColor: Color
     var body: some View {
         VStack(spacing: 4) {
             SecureField(placeholder, text: $enteredText)
-                .foregroundColor(.black)
-        Color.blue.frame(height:CGFloat(3) / UIScreen.main.scale)
+                .foregroundColor(textColor)
+        color.frame(height:CGFloat(3) / UIScreen.main.scale)
+            .padding(.bottom)
+        }
+    }
+}
+
+struct CustomPhoneField: View {
+    @State var enteredText: String = ""
+    var placeholder: String
+    var color: Color
+    var textColor: Color
+    var body: some View {
+        VStack(spacing: 4) {
+            HStack {
+                Text("+373")
+                    .foregroundColor(color)
+                    .font(.system(size: 16))
+            TextField(placeholder, text: $enteredText)
+                .foregroundColor(textColor)
+            }
+        color.frame(height:CGFloat(3) / UIScreen.main.scale)
             .padding(.bottom)
         }
     }
@@ -35,6 +59,6 @@ struct CustomSecureField: View {
 
 struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextField(placeholder: "Enter your email")
+        CustomPhoneField(placeholder: "123456", color: .black, textColor: .blue)
     }
 }

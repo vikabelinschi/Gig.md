@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A30030C42822ADB400784D02 /* JobDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30030C32822ADB400784D02 /* JobDetailPage.swift */; };
+		A30030C62823D3CF00784D02 /* AddJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30030C52823D3CF00784D02 /* AddJobView.swift */; };
 		A33A396527FDD77D00FEC51C /* TabBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33A396427FDD77D00FEC51C /* TabBarIcon.swift */; };
 		A365D7A627FD88AA00AE4647 /* FavoritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365D7A527FD88AA00AE4647 /* FavoritesButton.swift */; };
 		A365D7AA27FDA3D900AE4647 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365D7A927FDA3D900AE4647 /* MenuView.swift */; };
@@ -16,7 +18,7 @@
 		A381836E27C4EF7E00D94DD0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381836D27C4EF7E00D94DD0 /* LoginView.swift */; };
 		A381837027C4FED100D94DD0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381836F27C4FED100D94DD0 /* SignUpView.swift */; };
 		A381837227C5034C00D94DD0 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381837127C5034C00D94DD0 /* Checkbox.swift */; };
-		A381837427CFA62000D94DD0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381837327CFA61F00D94DD0 /* OnboardingView.swift */; };
+		A3A1DFB9282A60AB00938A75 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1DFB8282A60AB00938A75 /* UserDetailsView.swift */; };
 		A3A9C5AA27FED44B000F96E1 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5A927FED44B000F96E1 /* TabBarRouter.swift */; };
 		A3A9C5AC27FED5A3000F96E1 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5AB27FED5A3000F96E1 /* CircleButton.swift */; };
 		A3A9C5AE27FEF03D000F96E1 /* PlusMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5AD27FEF03D000F96E1 /* PlusMenuView.swift */; };
@@ -39,9 +41,12 @@
 		A3C1C16C27F5977500C216C8 /* ORView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1C16B27F5977500C216C8 /* ORView.swift */; };
 		A3C1C17927F5D41800C216C8 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1C17827F5D41800C216C8 /* FeedView.swift */; };
 		A3C1C17C27F5D68C00C216C8 /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1C17B27F5D68C00C216C8 /* JobModel.swift */; };
+		A3C65C852832426100D7C913 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C65C842832426100D7C913 /* Welcome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A30030C32822ADB400784D02 /* JobDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailPage.swift; sourceTree = "<group>"; };
+		A30030C52823D3CF00784D02 /* AddJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobView.swift; sourceTree = "<group>"; };
 		A33A396427FDD77D00FEC51C /* TabBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIcon.swift; sourceTree = "<group>"; };
 		A365D7A527FD88AA00AE4647 /* FavoritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButton.swift; sourceTree = "<group>"; };
 		A365D7A927FDA3D900AE4647 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -53,7 +58,7 @@
 		A381836D27C4EF7E00D94DD0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A381836F27C4FED100D94DD0 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A381837127C5034C00D94DD0 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
-		A381837327CFA61F00D94DD0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A3A1DFB8282A60AB00938A75 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		A3A9C5A927FED44B000F96E1 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
 		A3A9C5AB27FED5A3000F96E1 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		A3A9C5AD27FEF03D000F96E1 /* PlusMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusMenuView.swift; sourceTree = "<group>"; };
@@ -76,6 +81,7 @@
 		A3C1C16B27F5977500C216C8 /* ORView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ORView.swift; sourceTree = "<group>"; };
 		A3C1C17827F5D41800C216C8 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		A3C1C17B27F5D68C00C216C8 /* JobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
+		A3C65C842832426100D7C913 /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A3A1DFB6282A608800938A75 /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				A3A1DFB7282A609800938A75 /* View */,
+			);
+			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		A3A1DFB7282A609800938A75 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3A1DFB8282A60AB00938A75 /* UserDetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A3A9C5A827FED43D000F96E1 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				A3A9C5BB280049A8000F96E1 /* DetailPageView.swift */,
+				A30030C32822ADB400784D02 /* JobDetailPage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				A3A9C5CE280DA931000F96E1 /* AddSmthView.swift */,
+				A30030C52823D3CF00784D02 /* AddJobView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -267,6 +291,7 @@
 		A3C1C16F27F597F800C216C8 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				A3A1DFB6282A608800938A75 /* UserDetails */,
 				A3C1C17127F5980700C216C8 /* View */,
 			);
 			path = SignUp;
@@ -315,27 +340,11 @@
 				A3A9C5B92800498E000F96E1 /* DetailPage */,
 				A365D7A727FDA34A00AE4647 /* Menu */,
 				A3C1C17627F5D3FA00C216C8 /* Feed */,
-				A3C1C17427F5D3B100C216C8 /* Onboarding */,
 				A3C1C16D27F597D900C216C8 /* LoginModule */,
 				A3C1C16F27F597F800C216C8 /* SignUp */,
+				A3C65C842832426100D7C913 /* Welcome.swift */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		A3C1C17427F5D3B100C216C8 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				A3C1C17527F5D3BA00C216C8 /* View */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		A3C1C17527F5D3BA00C216C8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A381837327CFA61F00D94DD0 /* OnboardingView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		A3C1C17627F5D3FA00C216C8 /* Feed */ = {
@@ -440,14 +449,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3A9C5AA27FED44B000F96E1 /* TabBarRouter.swift in Sources */,
+				A3C65C852832426100D7C913 /* Welcome.swift in Sources */,
+				A3A1DFB9282A60AB00938A75 /* UserDetailsView.swift in Sources */,
 				A3C1C17927F5D41800C216C8 /* FeedView.swift in Sources */,
 				A3A9C5C0280076BD000F96E1 /* SplashView.swift in Sources */,
 				A3A9C5C228041BFE000F96E1 /* MenuButtonView.swift in Sources */,
 				A3A9C5C628084958000F96E1 /* FilterView.swift in Sources */,
 				A3ABC79727FC632F00138E9C /* TestInfo.swift in Sources */,
+				A30030C42822ADB400784D02 /* JobDetailPage.swift in Sources */,
 				A3C1C16627F1F06100C216C8 /* CustomTextField.swift in Sources */,
 				A365D7AA27FDA3D900AE4647 /* MenuView.swift in Sources */,
 				A3C1C16C27F5977500C216C8 /* ORView.swift in Sources */,
+				A30030C62823D3CF00784D02 /* AddJobView.swift in Sources */,
 				A381837027C4FED100D94DD0 /* SignUpView.swift in Sources */,
 				A3ABC79E27FC81FD00138E9C /* WorkersListView.swift in Sources */,
 				A3ABC79527FC61FD00138E9C /* WorkerModel.swift in Sources */,
@@ -459,7 +472,6 @@
 				A381836E27C4EF7E00D94DD0 /* LoginView.swift in Sources */,
 				A3C1C17C27F5D68C00C216C8 /* JobModel.swift in Sources */,
 				A3A9C5AE27FEF03D000F96E1 /* PlusMenuView.swift in Sources */,
-				A381837427CFA62000D94DD0 /* OnboardingView.swift in Sources */,
 				A3C1C16827F1F78D00C216C8 /* CustomExternalAuthButton.swift in Sources */,
 				A3A9C5BC280049A8000F96E1 /* DetailPageView.swift in Sources */,
 				A381835F27C4D6ED00D94DD0 /* Gig_mdApp.swift in Sources */,
@@ -600,7 +612,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gig.md/Preview Content\"";
-				DEVELOPMENT_TEAM = 4222XTR5H7;
+				DEVELOPMENT_TEAM = 9N46U6CY6A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Gig-md-Info.plist";
@@ -631,7 +643,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Gig.md/Preview Content\"";
-				DEVELOPMENT_TEAM = 4222XTR5H7;
+				DEVELOPMENT_TEAM = 9N46U6CY6A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Gig-md-Info.plist";
