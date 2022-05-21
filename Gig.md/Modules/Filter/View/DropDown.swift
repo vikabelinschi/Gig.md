@@ -68,7 +68,7 @@ struct DropDown: View {
 //                    }
                }
             } .padding()
-                .background(Color.purple)
+            .background(.white.opacity(0.2))
                 .cornerRadius(5)
     //   }
    }

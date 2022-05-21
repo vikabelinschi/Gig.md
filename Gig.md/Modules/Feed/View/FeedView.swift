@@ -14,27 +14,29 @@ struct FeedView: View {
     @State private var showingSheet = false
     @State private var showingSortSheet = false
     @State private var radius: CGFloat = 0.0
-    @State private var radius2: CGFloat = 0.0
+    @State var radius2: CGFloat = 0.0
+    @State var showTabBar: Bool =  true
+    
     var screen = UIScreen.main.bounds
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
                 ZStack {
                     if showingSheet {
-                        MenuView(showSheet: showingSheet)
-                            .transition(.move(edge: .leading))
-                            .frame(width: screen.width/1.2, height: screen.height, alignment: .leading)
-                            .zIndex(4)
+                        MenuView(showSheet: $showingSheet, showTabBar: $showTabBar, radius: $radius2)
                             .edgesIgnoringSafeArea(.all)
-                            .offset(x: -32)
+                            .transition(.move(edge: .leading))
+                            .zIndex(5)
+                            .navigationBarHidden(true)
                     }
                     if showingSortSheet {
-                        FilterView()
+                        FilterView(showTabBar: $showTabBar, showingSheet: $showingSortSheet, radius: $radius2)
                             .transition(.move(edge: .bottom))
                             .frame(width: screen.width, height: screen.height/1.5, alignment: .bottom)
                             .zIndex(4)
                             .edgesIgnoringSafeArea(.all)
-                            .offset(x: screen.minX, y: screen.minY + screen.height/7)
+                            .offset(x: screen.minX, y: screen.minY + screen.height/6)
+                            .navigationBarHidden(true)
                     }
                     VStack {
                         Spacer()
@@ -49,25 +51,26 @@ struct FeedView: View {
                         Spacer()
                         Color.white.frame(height:CGFloat(3) / UIScreen.main.scale)
                         ZStack {
-                            if showPopUp {
-                                PlusMenuView(widthAndHeight: geometry.size.width/7)
-                                    .offset(y: -geometry.size.height/6)
-                                
+                            if showTabBar {
+                                if showPopUp {
+                                    PlusMenuView(widthAndHeight: geometry.size.width/7)
+                                        .offset(y: -geometry.size.height/6)
+                                }
+                                HStack {
+                                    TabBarIcon(tabBarRouter: tabBarRouter, assignedPage: .jobs, width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "briefcase.fill", tabName: "Jobs")
+                                    CircleButton(showPopUp: showPopUp, action: {
+                                        withAnimation {
+                                            showPopUp.toggle()
+                                            self.radius2 = showPopUp ? 10 : 0
+                                        }
+                                    }, geometry: geometry)
+                                        .offset(y: -geometry.size.height/8/1.7)
+                                    
+                                    TabBarIcon(tabBarRouter: tabBarRouter, assignedPage: .workers, width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "person.2.fill", tabName: "Workers")
+                                }
+                                .frame(width: geometry.size.width, height: geometry.size.height/8)
+                                .background(.clear)
                             }
-                            HStack {
-                                TabBarIcon(tabBarRouter: tabBarRouter, assignedPage: .jobs, width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "briefcase.fill", tabName: "Jobs")
-                                CircleButton(showPopUp: showPopUp, action: {
-                                    withAnimation {
-                                        showPopUp.toggle()
-                                        self.radius2 = showPopUp ? 10 : 0
-                                    }
-                                }, geometry: geometry)
-                                    .offset(y: -geometry.size.height/8/1.7)
-                                
-                                TabBarIcon(tabBarRouter: tabBarRouter, assignedPage: .workers, width: geometry.size.width/3, height: geometry.size.height/30, systemIconName: "person.2.fill", tabName: "Workers")
-                            }
-                            .frame(width: geometry.size.width, height: geometry.size.height/8)
-                            .background(.clear)
                         }
                     }
                     .edgesIgnoringSafeArea(.bottom)
@@ -80,7 +83,8 @@ struct FeedView: View {
                     VStack {
                         Button() {
                             withAnimation {
-                                showingSheet.toggle()
+                                self.showTabBar = false
+                                showingSheet = true
                                 self.radius2 = showingSheet ? 20 : 0
                             }
                         } label: {
@@ -93,6 +97,7 @@ struct FeedView: View {
                     VStack {
                         Button() {
                             withAnimation {
+                                showTabBar = false
                                 showingSortSheet.toggle()
                                 self.radius2 = showingSortSheet ? 20 : 0
                             }

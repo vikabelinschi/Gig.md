@@ -28,15 +28,15 @@ struct SignUpView: View {
                         .resizable()
                         .frame(width: 180, height: 60)
                     VStack(alignment: .leading) {
-                        CustomTextField(enteredText: username, placeholder: "Enter a valid email", color: Color("darkPink"), textColor: Color("darkPink"))
-                        CustomSecureField(enteredText: password, placeholder: "Enter a password",color: Color("darkPink"), textColor: Color("darkPink"))
+                        CustomTextField(enteredText: username, placeholder: "Enter a valid email", color: Color("darkPink"), textColor: Color("purple-mix"))
+                        CustomSecureField(enteredText: password, placeholder: "Enter a password",color: Color("darkPink"), textColor: Color("purple-mix"))
                         CustomSecureField(enteredText: repeatPassword, placeholder: "Enter the same password", color: Color("darkPink"), textColor: Color("darkPink"))
                         Toggle("I agree to the Gig.md User Agreement and Privacy Policy", isOn: $checked)
                             .toggleStyle(CheckboxToggleStyle(style: .square))
                             .foregroundColor(.gray)
                             .font(.system(size: 15))
                         VStack(spacing: 20) {
-                                CustomButton(buttonText: "Continue", buttonColor: Color("pinkk"), textColor: .white) {
+                                CustomButton(buttonText: "Continue", buttonColor: Color("purple-mix"), textColor: .white) {
                                     self.continues.toggle()
                                 }
                             ORView()
@@ -54,7 +54,7 @@ struct SignUpView: View {
                             }
                         } label: {
                             Text("Sign In")
-                                .foregroundColor(Color("pinkk"))
+                                .foregroundColor(Color("purple-mix"))
                         }
                     }
                 }

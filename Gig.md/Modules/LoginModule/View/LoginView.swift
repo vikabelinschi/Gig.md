@@ -23,10 +23,10 @@ struct LoginView: View {
                         .resizable()
                         .frame(width: 180, height: 60)
                     VStack(alignment: .leading) {
-                        CustomTextField(enteredText: username, placeholder: "Enter your email", color: Color("darkPink"), textColor: Color("darkPink"))
-                        CustomSecureField(enteredText: password, placeholder: "Enter your password", color: Color("darkPink"), textColor: Color("darkPink"))
+                        CustomTextField(enteredText: username, placeholder: "Enter your email", color: Color("purple-mix"), textColor: Color("purple-mix"))
+                        CustomSecureField(enteredText: password, placeholder: "Enter your password", color: Color("purple-mix"), textColor: Color("purple-mix"))
                         VStack(spacing: 20) {
-                            CustomButton(buttonText: "Sign In", buttonColor: Color("pinkk"), textColor: .white)
+                            CustomButton(buttonText: "Sign In", buttonColor: Color("purple-mix"), textColor: .white)
                             ORView()
                             CustomExternalAuthButton(imageName: "google", buttonText: "Sign In with Google", buttonColor: .clear, textColor: .black, frameColor: .gray)
                             CustomExternalAuthButton(imageName: "fbwww", buttonText: "Sign In with Facebook", buttonColor: Color("fbcolor"), textColor: .white, frameColor: .clear)
@@ -42,7 +42,7 @@ struct LoginView: View {
                             }
                         } label: {
                             Text("Sign Up")
-                                .foregroundColor(Color("pinkk"))
+                                .foregroundColor(Color("purple-mix"))
                         }
                     }
                 }

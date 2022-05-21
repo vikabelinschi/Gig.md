@@ -30,3 +30,9 @@ var jobs: [JobModel] = [job1, job2, job3, job4, job5, job6, job7]
 var workers: [WorkerModel] = [worker1, worker2, worker3, worker4, worker5, worker6, worker7, worker8, worker9, worker10]
 
 let jobCategories: [String] = ["Housekeeper", "childCare", "driver", "painter", "construction worker", "Cook", "Translator"]
+
+let notifInfo1: NotificationModel = NotificationModel(type: "Worker", name: "Andrei Lesco", description: "Hi I am Andrei, I am a student at UTM and I would fit for your gig as I have knowledge in databases and servers.")
+
+let notifInfo2: NotificationModel = NotificationModel(type: "gig", name: "Dan Lsfesco", description: "Hi I am sfdsdfsdfndrei, I am a student at UTM and I would fit for your gig as I have knowledge in databases and servers.")
+
+let notifications = [notifInfo1, notifInfo2]

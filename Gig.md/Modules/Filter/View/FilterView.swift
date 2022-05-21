@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct FilterView: View {
+    @Binding var showTabBar: Bool
+    @Binding var showingSheet: Bool
+    @Binding var radius: CGFloat
     var body: some View {
         
         ZStack {
-            Color("darkPink")
+            Color("purple-mix").opacity(0.6)
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("Worker Filters")
@@ -34,7 +37,11 @@ struct FilterView: View {
                     Spacer()
                     HStack(spacing: 30) {
                         Button {
-                            
+                            withAnimation {
+                                self.showingSheet = false
+                                self.showTabBar = true
+                                self.radius = 0.0
+                            }
                         } label: {
                             Text("Clear Filters")
                         }.foregroundColor(.white)
@@ -43,7 +50,11 @@ struct FilterView: View {
                             .background(Color(.gray).opacity(0.4))
                             .cornerRadius(10)
                         Button {
-                            
+                            withAnimation {
+                                self.showingSheet = false
+                                self.showTabBar = true
+                                self.radius = 0.0
+                            }
                         } label: {
                             Text("Save Filters")
                     }
@@ -60,15 +71,13 @@ struct FilterView: View {
             }
             .padding(.bottom, 30)
         }
-     //   .padding(.vertical, 30)
         .cornerRadius(20)
         .fixedSize(horizontal: false, vertical: true)
-       // .frame( maxHeight: 500, alignment: .center)
     }
 }
 
 struct FilterView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterView()
+        FilterView(showTabBar: .constant(false), showingSheet: .constant(true), radius: .constant(0.0))
     }
 }

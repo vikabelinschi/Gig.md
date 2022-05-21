@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A30030C42822ADB400784D02 /* JobDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30030C32822ADB400784D02 /* JobDetailPage.swift */; };
 		A30030C62823D3CF00784D02 /* AddJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30030C52823D3CF00784D02 /* AddJobView.swift */; };
+		A31CDA8C28354A890067A796 /* PostedJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CDA8B28354A890067A796 /* PostedJobsView.swift */; };
+		A31CDA8E2835542D0067A796 /* PostedJobsBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CDA8D2835542D0067A796 /* PostedJobsBox.swift */; };
 		A33A396527FDD77D00FEC51C /* TabBarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33A396427FDD77D00FEC51C /* TabBarIcon.swift */; };
 		A365D7A627FD88AA00AE4647 /* FavoritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365D7A527FD88AA00AE4647 /* FavoritesButton.swift */; };
 		A365D7AA27FDA3D900AE4647 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A365D7A927FDA3D900AE4647 /* MenuView.swift */; };
@@ -18,6 +20,9 @@
 		A381836E27C4EF7E00D94DD0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381836D27C4EF7E00D94DD0 /* LoginView.swift */; };
 		A381837027C4FED100D94DD0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381836F27C4FED100D94DD0 /* SignUpView.swift */; };
 		A381837227C5034C00D94DD0 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381837127C5034C00D94DD0 /* Checkbox.swift */; };
+		A3941425283297BF008D5170 /* NotificationBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3941424283297BF008D5170 /* NotificationBox.swift */; };
+		A3941427283297F5008D5170 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3941426283297F5008D5170 /* NotificationModel.swift */; };
+		A394142B283396EF008D5170 /* WorkerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A394142A283396EE008D5170 /* WorkerProfileView.swift */; };
 		A3A1DFB9282A60AB00938A75 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A1DFB8282A60AB00938A75 /* UserDetailsView.swift */; };
 		A3A9C5AA27FED44B000F96E1 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5A927FED44B000F96E1 /* TabBarRouter.swift */; };
 		A3A9C5AC27FED5A3000F96E1 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A9C5AB27FED5A3000F96E1 /* CircleButton.swift */; };
@@ -35,6 +40,7 @@
 		A3ABC79A27FC6B0900138E9C /* WorkerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79927FC6B0900138E9C /* WorkerRowView.swift */; };
 		A3ABC79C27FC81B000138E9C /* JobListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79B27FC81B000138E9C /* JobListView.swift */; };
 		A3ABC79E27FC81FD00138E9C /* WorkersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABC79D27FC81FD00138E9C /* WorkersListView.swift */; };
+		A3B5F7FE2832865300A198DC /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5F7FD2832865300A198DC /* NotificationsView.swift */; };
 		A3C1C16627F1F06100C216C8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1C16527F1F06100C216C8 /* CustomTextField.swift */; };
 		A3C1C16827F1F78D00C216C8 /* CustomExternalAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1C16727F1F78D00C216C8 /* CustomExternalAuthButton.swift */; };
 		A3C1C16A27F5957600C216C8 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1C16927F5957600C216C8 /* CustomButton.swift */; };
@@ -47,6 +53,8 @@
 /* Begin PBXFileReference section */
 		A30030C32822ADB400784D02 /* JobDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailPage.swift; sourceTree = "<group>"; };
 		A30030C52823D3CF00784D02 /* AddJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobView.swift; sourceTree = "<group>"; };
+		A31CDA8B28354A890067A796 /* PostedJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostedJobsView.swift; sourceTree = "<group>"; };
+		A31CDA8D2835542D0067A796 /* PostedJobsBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostedJobsBox.swift; sourceTree = "<group>"; };
 		A33A396427FDD77D00FEC51C /* TabBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIcon.swift; sourceTree = "<group>"; };
 		A365D7A527FD88AA00AE4647 /* FavoritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButton.swift; sourceTree = "<group>"; };
 		A365D7A927FDA3D900AE4647 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -58,6 +66,9 @@
 		A381836D27C4EF7E00D94DD0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A381836F27C4FED100D94DD0 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A381837127C5034C00D94DD0 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		A3941424283297BF008D5170 /* NotificationBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBox.swift; sourceTree = "<group>"; };
+		A3941426283297F5008D5170 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		A394142A283396EE008D5170 /* WorkerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerProfileView.swift; sourceTree = "<group>"; };
 		A3A1DFB8282A60AB00938A75 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		A3A9C5A927FED44B000F96E1 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
 		A3A9C5AB27FED5A3000F96E1 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
@@ -75,6 +86,7 @@
 		A3ABC79927FC6B0900138E9C /* WorkerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerRowView.swift; sourceTree = "<group>"; };
 		A3ABC79B27FC81B000138E9C /* JobListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListView.swift; sourceTree = "<group>"; };
 		A3ABC79D27FC81FD00138E9C /* WorkersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkersListView.swift; sourceTree = "<group>"; };
+		A3B5F7FD2832865300A198DC /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		A3C1C16527F1F06100C216C8 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A3C1C16727F1F78D00C216C8 /* CustomExternalAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExternalAuthButton.swift; sourceTree = "<group>"; };
 		A3C1C16927F5957600C216C8 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -95,6 +107,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A31CDA8928354A740067A796 /* PostedJobs */ = {
+			isa = PBXGroup;
+			children = (
+				A31CDA8A28354A7B0067A796 /* View */,
+			);
+			path = PostedJobs;
+			sourceTree = "<group>";
+		};
+		A31CDA8A28354A7B0067A796 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A31CDA8B28354A890067A796 /* PostedJobsView.swift */,
+				A31CDA8D2835542D0067A796 /* PostedJobsBox.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A365D7A727FDA34A00AE4647 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +176,22 @@
 				A381836527C4D6F500D94DD0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A3941428283396D1008D5170 /* WorkerProfile */ = {
+			isa = PBXGroup;
+			children = (
+				A3941429283396DC008D5170 /* View */,
+			);
+			path = WorkerProfile;
+			sourceTree = "<group>";
+		};
+		A3941429283396DC008D5170 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A394142A283396EE008D5170 /* WorkerProfileView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A3A1DFB6282A608800938A75 /* UserDetails */ = {
@@ -272,6 +317,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A3B5F7FC2832863A00A198DC /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				A3B5F7FD2832865300A198DC /* NotificationsView.swift */,
+				A3941426283297F5008D5170 /* NotificationModel.swift */,
+				A3941424283297BF008D5170 /* NotificationBox.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		A3C1C16D27F597D900C216C8 /* LoginModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +355,7 @@
 		A3C1C17027F597FD00C216C8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A3C65C842832426100D7C913 /* Welcome.swift */,
 				A381835E27C4D6ED00D94DD0 /* Gig_mdApp.swift */,
 				A3ABC79627FC632F00138E9C /* TestInfo.swift */,
 				A3C1C17227F5985F00C216C8 /* UI */,
@@ -334,6 +390,9 @@
 		A3C1C17327F5D3A100C216C8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A31CDA8928354A740067A796 /* PostedJobs */,
+				A3941428283396D1008D5170 /* WorkerProfile */,
+				A3B5F7FC2832863A00A198DC /* Notifications */,
 				A3A9C5CC280DA919000F96E1 /* Add */,
 				A3A9C5C328084948000F96E1 /* Filter */,
 				A3A9C5BD280076A9000F96E1 /* Splash */,
@@ -342,7 +401,6 @@
 				A3C1C17627F5D3FA00C216C8 /* Feed */,
 				A3C1C16D27F597D900C216C8 /* LoginModule */,
 				A3C1C16F27F597F800C216C8 /* SignUp */,
-				A3C65C842832426100D7C913 /* Welcome.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -464,7 +522,11 @@
 				A381837027C4FED100D94DD0 /* SignUpView.swift in Sources */,
 				A3ABC79E27FC81FD00138E9C /* WorkersListView.swift in Sources */,
 				A3ABC79527FC61FD00138E9C /* WorkerModel.swift in Sources */,
+				A31CDA8E2835542D0067A796 /* PostedJobsBox.swift in Sources */,
 				A3C1C16A27F5957600C216C8 /* CustomButton.swift in Sources */,
+				A31CDA8C28354A890067A796 /* PostedJobsView.swift in Sources */,
+				A3B5F7FE2832865300A198DC /* NotificationsView.swift in Sources */,
+				A3941427283297F5008D5170 /* NotificationModel.swift in Sources */,
 				A3ABC79327FC4CF600138E9C /* JobRowView.swift in Sources */,
 				A3A9C5CF280DA931000F96E1 /* AddSmthView.swift in Sources */,
 				A3ABC79A27FC6B0900138E9C /* WorkerRowView.swift in Sources */,
@@ -476,9 +538,11 @@
 				A3A9C5BC280049A8000F96E1 /* DetailPageView.swift in Sources */,
 				A381835F27C4D6ED00D94DD0 /* Gig_mdApp.swift in Sources */,
 				A33A396527FDD77D00FEC51C /* TabBarIcon.swift in Sources */,
+				A394142B283396EF008D5170 /* WorkerProfileView.swift in Sources */,
 				A3A9C5CB280D5382000F96E1 /* DoubleSlider.swift in Sources */,
 				A365D7A627FD88AA00AE4647 /* FavoritesButton.swift in Sources */,
 				A3ABC79C27FC81B000138E9C /* JobListView.swift in Sources */,
+				A3941425283297BF008D5170 /* NotificationBox.swift in Sources */,
 				A3A9C5C928085FFD000F96E1 /* DropDown.swift in Sources */,
 				A381837227C5034C00D94DD0 /* Checkbox.swift in Sources */,
 			);

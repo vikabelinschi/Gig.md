@@ -8,35 +8,53 @@
 import SwiftUI
 
 struct MenuView: View {
-    @State var showSheet: Bool
+    @Binding var showSheet: Bool
+    @Binding var showTabBar: Bool
+    @Binding var radius: CGFloat
     var body: some View {
-        ZStack {
-            Color.white
-                .zIndex(0)
-            HStack {
-                VStack(alignment: .leading, spacing: 30){
-                    MenuButtonView(imageName: "person", text: "Profile")
-                        .padding(.top, 50)
-                    MenuButtonView(imageName: "envelope", text: "Messages")
-                    MenuButtonView(imageName: "gear", text: "Settings")
-                        Spacer()
-                    MenuButtonView(imageName: "rectangle.portrait.and.arrow.right", text: "Sign Out")
-                        .padding(.bottom, 20)
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                VStack {
-                    Button {
-                        withAnimation {
-                            showSheet.toggle()
+        if showSheet {
+            ZStack {
+                Color.white.opacity(0.5)
+                    .zIndex(0)
+                HStack {
+                    VStack(alignment: .leading, spacing: 30){
+                        NavigationLink(destination: NotificationsView()) {
+                        MenuButtonView(imageName: "envelope", text: "Notifications")
                         }
-                    } label: {
-                        Image(systemName: "x.circle.fill")
-                            .foregroundColor(Color("darkPink"))
+                        NavigationLink(destination: WorkerProfileView()) {
+                        MenuButtonView(imageName: "person.text.rectangle", text: "Worker Profile")
+                        }
+                        NavigationLink(destination: PostedJobsView()){
+                        MenuButtonView(imageName: "briefcase", text: "Posted Jobs")
+                        }
+                        MenuButtonView(imageName: "heart", text: "Favourites")
+                        Spacer()
+                        MenuButtonView(imageName: "rectangle.portrait.and.arrow.right", text: "Sign Out")
+                            .padding(.bottom, 40)
+                        
                     }
-                .padding(.trailing, 5)
-                .padding(.top, 40)
-                    Spacer()
+                    .padding(.top, 100)
+                    .padding()
+                    .padding(.leading, 10)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    VStack {
+                        Button {
+                            withAnimation {
+                                showTabBar = true
+                                showSheet = false
+                                radius = 0.00
+                            }
+                        } label: {
+                            Image(systemName: "x.circle.fill")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .foregroundColor(Color("purple-mix"))
+                            
+                        }
+                        .padding(.trailing, 20)
+                        .padding(.top, 70)
+                        Spacer()
+                    }
                 }
             }
         }
@@ -45,6 +63,6 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View{
-        MenuView(showSheet: false)
+        MenuView(showSheet: .constant(false), showTabBar: .constant(true), radius: .constant(0.00))
     }
 }

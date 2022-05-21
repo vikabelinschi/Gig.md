@@ -14,10 +14,11 @@ struct MenuButtonView: View {
         HStack{
             Image(systemName: imageName)
                 .imageScale(.large)
+            
             Text(text)
-                .font(.headline)
+                .font(.system(size: 20, weight: .semibold, design: .default))
         }
-        .foregroundColor(Color("darkPink"))
+        .foregroundColor(Color("purple-mix"))
     }
 }
 
