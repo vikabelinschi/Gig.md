@@ -11,10 +11,13 @@ struct UserDetailsView: View {
     @State var firstName: String = ""
     @State var lastName: String = ""
     @State var phoneNumber: String = ""
-    @State var selection: Bool = false
-    @State var birthDate: Date = Date.now
+    var email: String
+    var password: String
+    @State var birthDate: Date = Date()
+    @ObservedObject var viewModel = UDViewModel()
+    
     var body: some View {
-        if selection {
+        if viewModel.selection {
             FeedView(tabBarRouter: TabBarRouter())
         } else {
         NavigationView {
@@ -30,7 +33,7 @@ struct UserDetailsView: View {
                         .padding(6)
                         .padding(.top, 40)
                         .foregroundColor(.white)
-                    CustomTextField(enteredText: firstName, placeholder: "Enter your first name", color: .white, textColor: .white)
+                    CustomTextField(enteredText: $firstName, placeholder: "Enter your first name", color: .white, textColor: .white)
                         .padding(.horizontal, 10)
                 }
                 
@@ -39,7 +42,7 @@ struct UserDetailsView: View {
                         .font(.system(size: 17))
                         .padding(6)
                         .foregroundColor(.white)
-                    CustomTextField(enteredText: lastName, placeholder: " Enter your last name", color: .white, textColor: .white)
+                    CustomTextField(enteredText: $lastName, placeholder: " Enter your last name", color: .white, textColor: .white)
                         .padding(.horizontal, 10)
                 }
                 VStack(alignment: .leading) {
@@ -47,7 +50,7 @@ struct UserDetailsView: View {
                         .font(.system(size: 17))
                         .padding(6)
                         .foregroundColor(.white)
-                    CustomPhoneField(enteredText: phoneNumber, placeholder: "12345678", color: .white, textColor: .white)
+                    CustomPhoneField(enteredText: $phoneNumber, placeholder: "12345678", color: .white, textColor: .white)
                         .padding(.horizontal, 10)
                 }
                 VStack {
@@ -63,18 +66,9 @@ struct UserDetailsView: View {
                 }
                 .padding(6)
                 Spacer()
-                //                    NavigationLink(destination: FeedView(tabBarRouter: TabBarRouter())) {
-                //                        Group {
-                //                        Text("SIGN UP")
-                //                            .fontWeight(.semibold)
-                //                            .foregroundColor(Color("darkPink"))
-                //                            .cornerRadius(5)
-                //                    .frame(minWidth: 100, maxWidth: .infinity, minHeight: 44)
-                //                    .background(.white)
-                //                    .cornerRadius(5)
                 CustomButton(buttonText: "SIGN UP", buttonColor: .white, textColor: Color("darkPink"), action: {
                     withAnimation {
-                        self.selection.toggle()
+                        viewModel.signUpPressed(email: email, password: password, name: firstName, surname: lastName, phone: "+373\(phoneNumber)", age: birthDate) 
                     }
                 })
                     .shadow(radius: 30)
@@ -94,6 +88,6 @@ struct UserDetailsView: View {
 
 struct UserDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        UserDetailsView()
+        UserDetailsView(firstName: "a", lastName: "a", phoneNumber: "a", email: "a", password: "a", birthDate: Date())
     }
 }

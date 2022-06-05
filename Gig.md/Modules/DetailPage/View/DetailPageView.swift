@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct DetailPageView: View {
-    var worker: WorkerModel
+    var workerId: Int
+    @ObservedObject var viewModel = WorkerDetailViewModel()
     var body: some View {
         ZStack {
             Circle()
@@ -28,35 +29,38 @@ struct DetailPageView: View {
                 Color("darkPink").opacity(0.3)
         
                 VStack {
-                    Text(worker.firstName + " " + worker.lastName)
+                    Text(viewModel.worker?.userName ?? "")
                         .padding(8)
                         .padding(.top, 30)
                     VStack(alignment: .leading, spacing: 20) {
                         Text("Description")
                             .bold()
-                        Text(worker.description)
+                        Text(viewModel.worker?.description ??  "")
                         Text("Skills")
                             .bold()
                         VStack(alignment: .leading, spacing: 10) {
-                            ForEach(worker.skills, id: \.self) { skill in
+                            ForEach(viewModel.worker?.skills ?? [], id: \.self) { skill in
                                 Text(skill)
                             }
                         }
-                        if let education = worker.education {
+                        if let education = viewModel.worker?.educationDetails {
                             Text("Education")
                                 .bold()
                             VStack {
                                 ForEach(education, id: \.self) {
                                     education in
-                                    Text(education ?? "")
+                                    Text(education)
                                 }
                             }
                         }
                     }
                     Button {
-                        
+                        let tel = "tel://"
+                        let formattedString = tel + (viewModel.worker?.phoneNumber ?? "")
+                        guard let url = URL(string: formattedString) else { return }
+                        UIApplication.shared.open(url)
                     } label: {
-                        Text("Send message to \(worker.firstName)")
+                        Text("Get in touch with \(viewModel.worker?.userName ?? "")")
                             .foregroundColor(Color("darkPink"))
                             .padding(.horizontal, 30)
                             .padding(.vertical,10)
@@ -72,11 +76,15 @@ struct DetailPageView: View {
             .cornerRadius(20)
         .fixedSize(horizontal: false, vertical: true)
         }
+        .onAppear {
+            viewModel.getDetailedWorker(workerId: workerId)
+        }
     }
     
+    
     func isSkillLast(_ skill: String) -> Bool {
-        let skillCount = worker.skills.count
-        if let index = worker.skills.firstIndex(of: skill) {
+        let skillCount = viewModel.worker?.skills.count
+        if let index = viewModel.worker?.skills.firstIndex(of: skill) {
             if index + 1 != skillCount {
                 return false
             }
@@ -87,6 +95,6 @@ struct DetailPageView: View {
 
 struct DetailPageView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailPageView(worker: worker1)
+        DetailPageView(workerId: 1)
     }
 }

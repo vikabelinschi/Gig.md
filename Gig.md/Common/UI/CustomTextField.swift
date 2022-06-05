@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct CustomTextField: View {
-    @State var enteredText: String = ""
+    @State var enteredText: Binding<String>
     var placeholder: String
     var color: Color
     var textColor: Color
     var body: some View {
         VStack(spacing: 4) {
-            TextField(placeholder, text: $enteredText)
+            TextField(placeholder, text: enteredText)
                 .foregroundColor(textColor)
         color.frame(height:CGFloat(3) / UIScreen.main.scale)
             .padding(.bottom)
@@ -23,13 +23,13 @@ struct CustomTextField: View {
 }
 
 struct CustomSecureField: View {
-    @State var enteredText: String = ""
+    @State var enteredText: Binding<String>
     var placeholder: String
     var color: Color
     var textColor: Color
     var body: some View {
         VStack(spacing: 4) {
-            SecureField(placeholder, text: $enteredText)
+            SecureField(placeholder, text: enteredText)
                 .foregroundColor(textColor)
         color.frame(height:CGFloat(3) / UIScreen.main.scale)
             .padding(.bottom)
@@ -38,7 +38,7 @@ struct CustomSecureField: View {
 }
 
 struct CustomPhoneField: View {
-    @State var enteredText: String = ""
+    @State var enteredText: Binding<String>
     var placeholder: String
     var color: Color
     var textColor: Color
@@ -48,7 +48,7 @@ struct CustomPhoneField: View {
                 Text("+373")
                     .foregroundColor(color)
                     .font(.system(size: 16))
-            TextField(placeholder, text: $enteredText)
+            TextField(placeholder, text: enteredText)
                 .foregroundColor(textColor)
             }
         color.frame(height:CGFloat(3) / UIScreen.main.scale)
@@ -59,6 +59,6 @@ struct CustomPhoneField: View {
 
 struct CustomTextField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomPhoneField(placeholder: "123456", color: .black, textColor: .blue)
+        CustomPhoneField(enteredText: .constant("asda"), placeholder: "123456", color: .black, textColor: .blue)
     }
 }

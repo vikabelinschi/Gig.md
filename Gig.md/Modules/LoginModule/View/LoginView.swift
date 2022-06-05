@@ -11,8 +11,12 @@ struct LoginView: View {
     @State var username: String = ""
     @State var password: String = ""
     @State var signup: Bool = false
+    @ObservedObject var loginVM = LoginViewModel()
     var body: some View {
-        if signup {
+        if loginVM.selection {
+            FeedView(tabBarRouter: TabBarRouter())
+        }
+        else if signup {
             SignUpView()
                 .transition(.move(edge: .trailing))
         } else {
@@ -23,10 +27,12 @@ struct LoginView: View {
                         .resizable()
                         .frame(width: 180, height: 60)
                     VStack(alignment: .leading) {
-                        CustomTextField(enteredText: username, placeholder: "Enter your email", color: Color("purple-mix"), textColor: Color("purple-mix"))
-                        CustomSecureField(enteredText: password, placeholder: "Enter your password", color: Color("purple-mix"), textColor: Color("purple-mix"))
+                        CustomTextField(enteredText:$username, placeholder: "Enter your email", color: Color("purple-mix"), textColor: Color("purple-mix"))
+                        CustomSecureField(enteredText: $password, placeholder: "Enter your password", color: Color("purple-mix"), textColor: Color("purple-mix"))
                         VStack(spacing: 20) {
-                            CustomButton(buttonText: "Sign In", buttonColor: Color("purple-mix"), textColor: .white)
+                            CustomButton(buttonText: "Sign In", buttonColor: Color("purple-mix"), textColor: .white) {
+                                loginVM.signInPressed(email: username, password: password)
+                            }
                             ORView()
                             CustomExternalAuthButton(imageName: "google", buttonText: "Sign In with Google", buttonColor: .clear, textColor: .black, frameColor: .gray)
                             CustomExternalAuthButton(imageName: "fbwww", buttonText: "Sign In with Facebook", buttonColor: Color("fbcolor"), textColor: .white, frameColor: .clear)

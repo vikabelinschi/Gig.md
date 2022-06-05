@@ -9,20 +9,20 @@ import SwiftUI
 
 struct JobRowView: View {
     var screen = UIScreen.main.bounds
-    var job: JobModel
+    var job: JobListModel
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
-                Text(job.name)
+                Text(job.jobName)
                     .font(.system(size: 24, weight: .semibold, design: .default))
-                Text(job.employer)
+                Text(job.userName)
                     .foregroundColor(.white)
             }
             Spacer()
             VStack(alignment: .trailing) {
                 FavoritesButton(isOn: false, color: .white, action: {
                 })
-                Text(job.price)
+                Text(String(describing: job.wage))
                     .font(.system(size: 24, weight: .semibold, design: .default))
             }
         }
@@ -38,7 +38,7 @@ struct JobRowView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black
-            JobRowView(job: job1)
+            JobRowView(job: JobListModel(id: 2, jobName: "abcd", wage: 44, userName: "A B"))
         }
     }
 }

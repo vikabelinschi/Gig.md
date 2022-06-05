@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct WorkersListView: View {
-    var workers: [WorkerModel]
-    @State var worker: WorkerModel?
-    @State var selectedWorker: WorkerModel?
+    var workers: [WorkerListModel]
+    @State var worker: WorkerListModel?
+    @State var selectedWorker: WorkerListModel?
     @State var workerTapped: Bool = false
     var screen = UIScreen.main.bounds
     var body: some View {
@@ -33,7 +33,7 @@ struct WorkersListView: View {
         }
         else {
             if let selectedWorker = selectedWorker {
-                DetailPageView(worker: selectedWorker)
+                DetailPageView(workerId: selectedWorker.id)
                     .frame(width: screen.width - 50)
                     .onTapGesture {
                         withAnimation {
@@ -86,6 +86,6 @@ struct WorkersListView: View {
 
 struct WorkersListView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkersListView(workers: workers)
+        WorkersListView(workers: workers1)
     }
 }

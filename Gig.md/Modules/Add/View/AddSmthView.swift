@@ -9,8 +9,14 @@ import SwiftUI
 
 struct AddSmthView: View {
     @State var description: String = ""
-    
+    @State var skills: String =  ""
+    @State var education: String = ""
+    @State var experience: String = ""
+    @ObservedObject var viewmodel = AddWorkerViewModel()
     var body: some View {
+        if !viewmodel.showAddWorker{
+            FeedView(tabBarRouter: TabBarRouter())
+        } else {
             VStack(spacing: 20) {
                 VStack(alignment: .leading) {
                     Text("Description")
@@ -24,7 +30,7 @@ struct AddSmthView: View {
                 .padding(.horizontal, 25)
                 VStack(alignment: .leading) {
                     Text("Skills")
-                    TextField(" + Add new skill", text: $description)
+                    TextField(" + Add new skill", text: $skills)
                         .foregroundColor(.white)
                         .frame(height: 40)
                         .background(Color("darkPink").opacity(0.3))
@@ -32,7 +38,7 @@ struct AddSmthView: View {
                 .padding(.horizontal, 25)
                 VStack(alignment: .leading) {
                     Text("Education")
-                    TextField(" + Add education", text: $description)
+                    TextField(" + Add education", text: $education)
                         .foregroundColor(.white)
                         .frame(height: 40)
                         .background(Color("darkPink").opacity(0.3))
@@ -40,7 +46,7 @@ struct AddSmthView: View {
                 .padding(.horizontal, 25)
                 VStack(alignment: .leading) {
                     Text("Previous Experience")
-                    TextField(" + Add experience", text: $description)
+                    TextField(" + Add experience", text: $experience)
                         .foregroundColor(.white)
                         .frame(height: 40)
                         .background(Color("darkPink").opacity(0.3))
@@ -48,7 +54,7 @@ struct AddSmthView: View {
                 .padding(.horizontal, 25)
                 Spacer()
                 Button {
-                    
+                    viewmodel.addWorker(skills: [skills], description: description, educationDetails: [education], experiences: [experience])
                 } label: {
                     Text("Post your worker profile")
                         .bold()
@@ -70,22 +76,9 @@ struct AddSmthView: View {
                     }
                 }
             }
-//            .navigationBarTitle("Add your worker profile", displayMode: .inline)
-//            .foregroundColor(Color("darkPink"))
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    Button() {
-//                        withAnimation {
-//                        }
-//                    } label: {
-//                        Image(systemName: "x.circle.fill")
-//                            .foregroundColor(Color("darkPink"))
-//                    }
-//                }
-//            }
- ///       }
+        }
+        
     }
-    
 }
 
 struct AddSmthView_Previews: PreviewProvider {

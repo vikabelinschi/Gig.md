@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct JobListView: View {
-    var jobs: [JobModel]
+    var jobs: [JobListModel]
     @State var tappedJob: Bool = false
-    @State var selectedJob: JobModel?
+    @State var selectedJob: JobListModel?
     var screen = UIScreen.main.bounds
     var body: some View {
         if !tappedJob {
@@ -31,7 +31,7 @@ struct JobListView: View {
     }
         else {
             if let selectedJob = selectedJob {
-                JobDetailPage(job: selectedJob)
+                JobDetailPage(jobId: selectedJob.id)
                     .frame(width: screen.width - 50)
                     .onTapGesture {
                         self.tappedJob.toggle()
@@ -43,6 +43,6 @@ struct JobListView: View {
 
 struct JobListView_Previews: PreviewProvider {
     static var previews: some View {
-        JobListView(jobs: jobs)
+        JobListView(jobs: jobs1)
     }
 }

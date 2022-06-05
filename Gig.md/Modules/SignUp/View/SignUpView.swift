@@ -14,12 +14,15 @@ struct SignUpView: View {
     @State var checked: Bool = false
     @State var continues: Bool = false
     @State var signin: Bool = false
+    
     var body: some View {
         if signin {
             LoginView()
                 .transition(.move(edge: .trailing))
         } else if continues {
-            UserDetailsView()
+            if username != "" && password != "" && password == repeatPassword  {
+                UserDetailsView(email: username, password: password)
+            }
         } else {
             NavigationView {
                 VStack(spacing: 40) {
@@ -28,9 +31,9 @@ struct SignUpView: View {
                         .resizable()
                         .frame(width: 180, height: 60)
                     VStack(alignment: .leading) {
-                        CustomTextField(enteredText: username, placeholder: "Enter a valid email", color: Color("darkPink"), textColor: Color("purple-mix"))
-                        CustomSecureField(enteredText: password, placeholder: "Enter a password",color: Color("darkPink"), textColor: Color("purple-mix"))
-                        CustomSecureField(enteredText: repeatPassword, placeholder: "Enter the same password", color: Color("darkPink"), textColor: Color("darkPink"))
+                        CustomTextField(enteredText: $username, placeholder: "Enter a valid email", color: Color("darkPink"), textColor: Color("purple-mix"))
+                        CustomSecureField(enteredText: $password, placeholder: "Enter a password",color: Color("darkPink"), textColor: Color("purple-mix"))
+                        CustomSecureField(enteredText: $repeatPassword, placeholder: "Enter the same password", color: Color("darkPink"), textColor: Color("darkPink"))
                         Toggle("I agree to the Gig.md User Agreement and Privacy Policy", isOn: $checked)
                             .toggleStyle(CheckboxToggleStyle(style: .square))
                             .foregroundColor(.gray)

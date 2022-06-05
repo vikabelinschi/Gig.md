@@ -10,6 +10,7 @@ import SwiftUI
 struct FeedView: View {
     
     @StateObject var tabBarRouter: TabBarRouter
+    @ObservedObject var feedViewModel =  FeedViewModel()
     @State var showPopUp = false
     @State private var showingSheet = false
     @State private var showingSortSheet = false
@@ -42,11 +43,17 @@ struct FeedView: View {
                         Spacer()
                         switch tabBarRouter.currentPage {
                         case .jobs:
-                            JobListView(jobs: jobs)
+                            JobListView(jobs: feedViewModel.availableJobs)
                                 .blur(radius: radius2)
+                                .onAppear {
+                                    feedViewModel.loadAvailableJobs()
+                                }
                         case .workers:
-                            WorkersListView(workers: workers)
+                            WorkersListView(workers: feedViewModel.availableWorkers)
                                 .blur(radius: radius2)
+                                .onAppear {
+                                    feedViewModel.loadAvailableWorkers()
+                                }
                         }
                         Spacer()
                         Color.white.frame(height:CGFloat(3) / UIScreen.main.scale)

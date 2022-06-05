@@ -9,11 +9,11 @@ import SwiftUI
 
 struct WorkerRowView: View {
     var screen = UIScreen.main.bounds
-    var worker: WorkerModel
+    var worker: WorkerListModel
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 10) {
-                Text(worker.firstName + " " + worker.lastName)
+                Text(worker.userName)
                     .font(.system(size: 24, weight: .semibold, design: .default))
                 HStack{
                     ForEach(worker.skills, id: \.self) { skill in
@@ -52,6 +52,6 @@ struct WorkerRowView: View {
 
 struct WorkerRowView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkerRowView(worker: worker1)
+        WorkerRowView(worker: WorkerListModel(id: 3, userName: "aads", skills: ["as", "asq"]))
     }
 }
