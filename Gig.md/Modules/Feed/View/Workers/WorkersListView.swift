@@ -10,14 +10,31 @@ import SwiftUI
 struct WorkersListView: View {
     var workers: [WorkerListModel]
     @State var worker: WorkerListModel?
+    @ObservedObject var feedViewModel =  FeedViewModel()
     @State var selectedWorker: WorkerListModel?
     @State var workerTapped: Bool = false
     var screen = UIScreen.main.bounds
+    @State private var now = Date()
+    
+    func check() -> [WorkerListModel] {
+        if feedViewModel.availableJobs != [] {
+            return feedViewModel.availableWorkers
+        } else {
+            return workers
+        }
+    }
+    
     var body: some View {
         if !workerTapped {
-            ScrollView {
+            RefreshableScrollView(onRefresh: { done in
+                   DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                     self.now = Date()
+                       feedViewModel.loadAvailableWorkers()
+                     done()
+                   }
+                 }) {
                 VStack {
-                    ForEach(workers, id: \.self) { worker in
+                    ForEach(check(), id: \.self) { worker in
                         WorkerRowView(worker: worker)
                             .onTapGesture {
                                 withAnimation {
@@ -33,7 +50,7 @@ struct WorkersListView: View {
         }
         else {
             if let selectedWorker = selectedWorker {
-                DetailPageView(workerId: selectedWorker.id)
+                DetailPageView(workerId: selectedWorker.id, isPresented: $workerTapped)
                     .frame(width: screen.width - 50)
                     .onTapGesture {
                         withAnimation {

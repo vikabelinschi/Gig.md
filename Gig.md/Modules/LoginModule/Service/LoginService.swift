@@ -16,7 +16,7 @@ class LoginService {
     // MARK: - Constants and Variables
     
     private enum APIConstants {
-        static let url = "http://localhost:8080/api"
+        static let url = "http://gigmd2-env.eba-ajmjrmc5.us-east-1.elasticbeanstalk.com/api"
         static let path = "/auth/login"
         static let userNameParameter = "Username"
         static let passwordParameter = "Password"

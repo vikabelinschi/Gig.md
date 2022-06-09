@@ -55,9 +55,18 @@ struct LoginView: View {
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
+                .onAppear {
+                    CommonVars.token = ""
+                }
             }
             .background(.white)
             .edgesIgnoringSafeArea(.all)
+            .alert("Incorrect email or password", isPresented: $loginVM.showAlert) {
+                       Button("OK", role: .cancel) {
+                           loginVM.showAlert = false
+                       }
+                   }
+
         }
     }
 }

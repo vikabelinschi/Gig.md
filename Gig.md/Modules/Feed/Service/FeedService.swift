@@ -14,8 +14,8 @@ class FeedService {
     // MARK: - Constants and Variables
     
     private enum APIConstants {
-        static let url = "http://localhost:8080/api"
-        static let jobsPath = "/jobs"
+        static let url = "http://gigmd2-env.eba-ajmjrmc5.us-east-1.elasticbeanstalk.com/api"
+        static let jobsPath = "/jobs/available"
         static let workersPath = "/users"
     }
     
@@ -27,7 +27,7 @@ class FeedService {
         self.networkService = networkService
     }
     
-    // MARK: - FeedServiceMethods
+    // MARK: - NotificationsServiceMethods
     
     func getJobs(completion: @escaping(Result <[JobListModel], Error>) -> Void) {
         do {

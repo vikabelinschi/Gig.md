@@ -11,8 +11,13 @@ struct MenuView: View {
     @Binding var showSheet: Bool
     @Binding var showTabBar: Bool
     @Binding var radius: CGFloat
+    @State var showLogin: Bool = false
     var body: some View {
-        if showSheet {
+if showLogin {
+           LoginView()
+        .transition(.move(edge: .trailing))
+       }
+        else if showSheet {
             ZStack {
                 Color.white.opacity(0.5)
                     .zIndex(0)
@@ -24,13 +29,18 @@ struct MenuView: View {
                         NavigationLink(destination: WorkerProfileView()) {
                         MenuButtonView(imageName: "person.text.rectangle", text: "Worker Profile")
                         }
-                        NavigationLink(destination: PostedJobsView()){
+                        NavigationLink(destination: PostedJobsView()) {
                         MenuButtonView(imageName: "briefcase", text: "Posted Jobs")
                         }
                         MenuButtonView(imageName: "heart", text: "Favourites")
                         Spacer()
+                        Button(action: {
+                            showLogin = true
+                            showSheet = false
+                        })  {
                         MenuButtonView(imageName: "rectangle.portrait.and.arrow.right", text: "Sign Out")
                             .padding(.bottom, 40)
+                        }
                         
                     }
                     .padding(.top, 100)

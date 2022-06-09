@@ -16,10 +16,12 @@ class UDViewModel: ObservableObject {
     let signUpService = SignUpService(with: NetworkServiceImp())
     
     func signUpPressed(email: String, password: String, name: String, surname: String, phone: String, age: Date) {
-        signUpService.signUp(credentials: SignUpModel(email: email, password: password, name: name, surname: surname, phoneNumber: phone, age: convertAge(birthDate: age))) { result in
+        let convertedAge: String = convertAge(birthDate: age)
+        signUpService.signUp(credentials: SignUpModel(email: email, password: password, name: name, surname: surname, phoneNumber: phone, age: convertedAge)) { result in
             switch result {
             case.success(let responnse):
                 CommonVars.token = responnse.token
+                print("yess")
                 DispatchQueue.main.async {
                     self.selection = true
                 }
@@ -34,7 +36,7 @@ class UDViewModel: ObservableObject {
         let calendar = Calendar.current
         let now = Date()
         let calcAge = calendar.dateComponents([.year], from: birthDate, to: now)
-        let age = String(describing: calcAge.year)
+        let age = String(describing: calcAge.year!)
         return age
     }
 }

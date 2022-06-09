@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct PostedJobsBox: View {
-    var job: JobModel
+    var job: UsersJobsModel
+    var screen =  UIScreen.main.bounds
     var body: some View {
-        HStack(spacing: 10) {
+        HStack {
             VStack(alignment: .leading, spacing: 10) {
-                Text(job.name)
+                Text(job.jobName)
                     .foregroundColor(.white)
                     .font(.system(size: 17, weight: .semibold, design: .default))
-                Text(job.description)
-                    .foregroundColor(.white)
-                    .font(.system(size: 15, weight: .regular, design: .default))
             }
-            Text(job.price)
+            Spacer()
+            Text(String(job.wage) + "$")
                 .foregroundColor(.white)
                 .font(.system(size: 20, weight: .bold, design: .default))
         }
+        .frame(width: screen.width - 60)
         .padding(20)
         .background(Color("purple-mix").opacity(0.7))
         .cornerRadius(20)
@@ -31,6 +31,6 @@ struct PostedJobsBox: View {
 
 struct PostedJobsBox_Previews: PreviewProvider {
     static var previews: some View {
-        PostedJobsBox(job: job1)
+        PostedJobsBox(job: UsersJobsModel(id: 1, jobName: "sdasd", wage: 22, userName: "Afas"))
     }
 }

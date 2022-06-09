@@ -10,6 +10,8 @@ import SwiftUI
 struct JobDetailPage: View {
     var jobId: Int
     @ObservedObject var viewModel = JobDetailViewModel()
+    @State var showingAlert = false
+    @Binding var isPresented: Bool
     var body: some View {
         ZStack {
             ZStack {
@@ -37,7 +39,10 @@ struct JobDetailPage: View {
                         }
                     }
                     Button {
-                        
+                        viewModel.applyToJob(jobId: jobId)
+                        withAnimation {
+                            isPresented = false
+                        }
                     } label: {
                         Text("Apply to this gig")
                             .foregroundColor(Color("darkPink"))
@@ -58,11 +63,14 @@ struct JobDetailPage: View {
         .onAppear {
             viewModel.getJobDetail(jobId: jobId)
         }
+        .alert("Important message", isPresented: $showingAlert) {
+                   Button("OK", role: .cancel) { }
+               }
     }
 }
 
 struct JobDetailPage_Previews: PreviewProvider {
     static var previews: some View {
-        JobDetailPage(jobId: 1)
+        JobDetailPage(jobId: 1, isPresented: .constant(true))
     }
 }

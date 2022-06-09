@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct PostedJobsView: View {
-    var postedJobs: [JobModel] = [job1, job2, job3]
+    @ObservedObject var viewModel = PostedJobsViewModel()
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(postedJobs, id:\.self) {
+                ForEach(viewModel.usersJobs, id:\.self) {
                     job in
                     PostedJobsBox(job: job)
                 }
@@ -23,6 +23,9 @@ struct PostedJobsView: View {
         .navigationTitle("Posted Jobs")
         .background(            LinearGradient(gradient: Gradient(colors: [Color("darkBlue").opacity(0.55),Color("purple-mix").opacity(0.7), Color("p").opacity(0.5)]), startPoint: .top, endPoint: .bottom))
         .foregroundColor(.purple)
+         .onAppear {
+            viewModel.getAllJobs()
+        }
     }
 }
 

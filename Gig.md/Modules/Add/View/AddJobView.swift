@@ -5,92 +5,111 @@
 //  Created by Victoria Belinschi on 05.05.2022.
 //
 
+import Foundation
 import SwiftUI
 
 struct AddJobView: View {
     @State var description: String = ""
     @State var category: String = ""
     @State var categories: [String] = []
-    enum FocusField: Hashable {
-       case field
-     }
+    @State var jobName: String = ""
+    @State var location: String = ""
+    @State var date: Date = Date()
+    @State var wage: String = ""
+    @Binding var isPresented: Bool
+    @ObservedObject var viewmodel = AddJobViewModel()
 
-     @FocusState private var focusedField: FocusField?
-
+    
     var body: some View {
+        
+        if !viewmodel.showAddJob{
+            FeedView(tabBarRouter: TabBarRouter())
+        } else {
             VStack(spacing: 20) {
                 VStack(alignment: .leading) {
+                    Text("Name")
+                    TextField(" Set your gig name", text: $jobName)
+                        .foregroundColor(Color("darkPink"))
+                        .frame(height: 40)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color.purple, lineWidth: 1)
+                        )
+                        .background(Color("darkPink").opacity(0.4))
+                }
+                .padding(.horizontal, 25)
+                VStack(alignment: .leading) {
                     Text("Description")
-                    TextField("", text: $description)
-                        .foregroundColor(.white)
+                    TextEditor( text: $description)
+                        .foregroundColor(Color("darkPink"))
                         .frame(height: 120)
-                        .background(Color("darkPink").opacity(0.3))
-                        .cornerRadius(20)
+                        .colorMultiply(Color("darkPink").opacity(0.4))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color.purple, lineWidth: 1)
+                        )
                     
                 }
                 .padding(.horizontal, 25)
                 VStack(alignment: .leading) {
                     Text("Category")
-                    ForEach($categories, id: \.self) { category in
-                        TextField("", text: category)
-                            .foregroundColor(.white)
-                            .frame(height: 40)
-                            .padding(.horizontal, 8)
-                            .background(Color("darkPink").opacity(0.3))
-                            .focused($focusedField, equals: .field)
-                                     .onAppear {
-                                       self.focusedField = .field
-                                   }
+                    DropdownSelector(placeholder: "Choose your category", options: [        DropdownOption(key: "CHILD_CARE", value: "Child care"),
+                                                                                            DropdownOption(key: "DRIVER", value: "Driver"),
+                                                                                            DropdownOption(key: "COOK", value: "Cook"),
+                                                                                            DropdownOption(key: "CLEANING", value: "Cleaning"),
+                                                                                            DropdownOption(key: "LANGUAGES", value: "Languages"),
+                                                                                            DropdownOption(key: "FINANCE", value: "Finance"),
+                                                                                            DropdownOption(key: "ENTERTAINMENT", value: "Entertainment")]) { option in
+                        self.category = option.key
                     }
-                    Button {
-                        categories.append("")
-                    } label: {
-                        HStack {
-                            Text("+ Add new category")
-                                .padding(8)
-                            Spacer().frame(maxWidth:.infinity)
-                        }
-                        .frame(height: 40)
-                        .frame(width: UIScreen.main.bounds.width - 50)
-                    .background(Color("darkPink").opacity(0.3))
-                    }
-
                 }
                 .padding(.horizontal, 25)
                 VStack(alignment: .leading) {
                     Text("Location")
-                    TextField(" Choose your Location", text: $description)
-                        .foregroundColor(.white)
+                    TextField(" Write the gig location", text: $location)
+                        .foregroundColor(Color("darkPink"))
                         .frame(height: 40)
-                        .background(Color("darkPink").opacity(0.3))
-                }
-                .padding(.horizontal, 25)
-                VStack(alignment: .leading) {
-                    Text("Date and Time")
-                    TextField("Choose the date and time for the gig", text: $description)
-                        .foregroundColor(.white)
-                        .frame(height: 40)
-                        .background(Color("darkPink").opacity(0.3))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color.purple, lineWidth: 1)
+                        )
+                        .background(Color("darkPink").opacity(0.4))
+
                 }
                 .padding(.horizontal, 25)
                 VStack(alignment: .leading) {
                     Text("Wage")
-                    TextField(" Set your gig wage", text: $description)
-                        .foregroundColor(.white)
+                    TextField(" Set your gig wage", text: $wage)
+                        .foregroundColor(Color("darkPink"))
                         .frame(height: 40)
-                        .background(Color("darkPink").opacity(0.3))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color.purple, lineWidth: 1)
+                        )
+                        .background(Color("darkPink").opacity(0.4))
+                }
+                .padding(.horizontal, 25)
+                VStack(alignment: .leading) {
+                    DatePicker(
+                        "Gig Date",
+                        selection: $date,
+                        displayedComponents: [.date]
+                    )
+                        .foregroundColor(Color("darkPink"))
+                        .accentColor(Color("darkPink"))
                 }
                 .padding(.horizontal, 25)
                 Spacer()
                 Button {
-                    
+                    viewmodel.addJob(jobName: jobName, description: description, category: category, location: location, date: date, wage: wage)
+                    isPresented = false
                 } label: {
                     Text("Post your gig job")
                         .bold()
                         .padding()
                         .frame(width: UIScreen.main.bounds.width - 50)
                         .background(LinearGradient(gradient: Gradient(colors: [Color("darkBlue").opacity(0.4),Color("purple-mix").opacity(0.5), Color("p").opacity(0.5)]), startPoint: .leading, endPoint: .trailing))
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("darkPink"))
                         .cornerRadius(20)
                 }
             }
@@ -107,9 +126,10 @@ struct AddJobView: View {
             }
         }
     }
+}
 
 struct AddJobView_Previews: PreviewProvider {
     static var previews: some View {
-        AddJobView()
+        AddJobView(isPresented: .constant(true))
     }
 }

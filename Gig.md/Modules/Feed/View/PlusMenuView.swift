@@ -10,10 +10,12 @@ import SwiftUI
 struct PlusMenuView: View {
     
     let widthAndHeight: CGFloat
+    @State private var showDetail = false
+    @State private var showDetail1 = false
     
     var body: some View {
             HStack(spacing: 50) {
-               NavigationLink(destination: AddJobView()) {
+                NavigationLink(destination: AddJobView( isPresented: $showDetail), isActive: $showDetail) {
                     ZStack {
                         Circle()
                             .foregroundColor(Color("darkPink"))
@@ -26,7 +28,7 @@ struct PlusMenuView: View {
                             .foregroundColor(.white)
                     }
                 }
-                NavigationLink(destination: AddSmthView()) {
+                NavigationLink(destination: AddSmthView( isPresented: $showDetail1), isActive: $showDetail1) {
                         ZStack {
                             Circle()
                                 .foregroundColor(Color("darkPink"))

@@ -76,6 +76,9 @@ struct DropDown: View {
 
 struct DropDown_Previews: PreviewProvider {
     static var previews: some View {
-        DropDown()
+        ZStack {
+            Color.black
+            DropDown()
+        }
     }
 }

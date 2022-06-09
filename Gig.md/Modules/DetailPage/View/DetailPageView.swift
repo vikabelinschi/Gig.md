@@ -10,21 +10,8 @@ import SwiftUI
 struct DetailPageView: View {
     var workerId: Int
     @ObservedObject var viewModel = WorkerDetailViewModel()
+    @Binding var isPresented: Bool
     var body: some View {
-        ZStack {
-            Circle()
-                .foregroundColor(.white)
-                .frame(width: 80)
-                .offset(y: -285)
-                .zIndex(5)
-            Image("1")
-                .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .clipShape(Circle())
-                        .frame(width: 150)
-                        .offset(y: -285)
-                        .zIndex(6)
-            
             ZStack {
                 Color("darkPink").opacity(0.3)
         
@@ -46,7 +33,7 @@ struct DetailPageView: View {
                         if let education = viewModel.worker?.educationDetails {
                             Text("Education")
                                 .bold()
-                            VStack {
+                            VStack(alignment: .leading) {
                                 ForEach(education, id: \.self) {
                                     education in
                                     Text(education)
@@ -59,6 +46,10 @@ struct DetailPageView: View {
                         let formattedString = tel + (viewModel.worker?.phoneNumber ?? "")
                         guard let url = URL(string: formattedString) else { return }
                         UIApplication.shared.open(url)
+                        withAnimation {
+                            isPresented = false
+                        }
+                        
                     } label: {
                         Text("Get in touch with \(viewModel.worker?.userName ?? "")")
                             .foregroundColor(Color("darkPink"))
@@ -75,7 +66,6 @@ struct DetailPageView: View {
             }
             .cornerRadius(20)
         .fixedSize(horizontal: false, vertical: true)
-        }
         .onAppear {
             viewModel.getDetailedWorker(workerId: workerId)
         }
@@ -95,6 +85,6 @@ struct DetailPageView: View {
 
 struct DetailPageView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailPageView(workerId: 1)
+        DetailPageView(workerId: 1, isPresented: .constant(true))
     }
 }

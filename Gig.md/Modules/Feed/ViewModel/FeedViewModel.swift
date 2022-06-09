@@ -17,7 +17,9 @@ import Foundation
         feedService.getJobs { result in
             switch result {
         case .success(let response):
-                self.availableJobs = response
+                DispatchQueue.main.async {
+                    self.availableJobs = response
+                }
         case .failure(let error):
             print(error)
             }
@@ -29,7 +31,9 @@ import Foundation
             switch result {
         case .success(let response):
                 print(response)
-            self.availableWorkers = response
+                DispatchQueue.main.async {
+                    self.availableWorkers = response
+                }
         case .failure(let error):
             print(error)
             }

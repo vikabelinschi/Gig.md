@@ -1,15 +1,15 @@
 //
-//  WorkerDetailModel.swift
+//  EmployerAcceptDetailsModel.swift
 //  Gig.md
 //
-//  Created by Victoria Belinschi on 29.05.2022.
+//  Created by Victoria Belinschi on 06.06.2022.
 //
 
 import Foundation
 
-struct  WorkerDetailModel: Codable, Hashable {
+struct  EmployerAcceptDetailsModel: Codable, Hashable {
     
-    var id: Int
+    var id: String
     var userName: String
     var skills: [String]
     var age: String
@@ -17,4 +17,5 @@ struct  WorkerDetailModel: Codable, Hashable {
     var educationDetails: [String]
     var experiences: [String]
     var phoneNumber: String
+    var jobId: Int
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WorkerProfileView: View {
     var profile: WorkerModel?
+    @State private var showDetail = false
+    
     var body: some View {
         if let profile = profile {
             VStack(alignment: .leading){
@@ -51,7 +53,7 @@ struct WorkerProfileView: View {
                     .foregroundColor(.purple)
             Text("It seems like you do not have your worker profile set.")
                 .foregroundColor(.purple)
-            NavigationLink(destination: AddSmthView()) {
+            NavigationLink(destination: AddSmthView(isPresented: $showDetail), isActive: $showDetail) {
 
                 Text("Proceed to creating your worker profile")
                     .foregroundColor(.white)

@@ -43,7 +43,7 @@ public class NetworkServiceImp: NSObject, NetworkService {
                 completion(.failure(ValidationError.defaultError))
                 return
             }
-            
+            print(httpResponse)
             if httpResponse.statusCode == 400 {
                 completion(.failure(ValidationError.requestError))
                 return

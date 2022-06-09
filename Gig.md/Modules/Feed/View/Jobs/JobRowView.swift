@@ -22,7 +22,7 @@ struct JobRowView: View {
             VStack(alignment: .trailing) {
                 FavoritesButton(isOn: false, color: .white, action: {
                 })
-                Text(String(describing: job.wage))
+                Text(String(describing: job.wage) + " $")
                     .font(.system(size: 24, weight: .semibold, design: .default))
             }
         }

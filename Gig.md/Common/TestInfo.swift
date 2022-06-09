@@ -39,3 +39,7 @@ let notifInfo1: NotificationModel = NotificationModel(type: "Worker", name: "And
 let notifInfo2: NotificationModel = NotificationModel(type: "gig", name: "Dan Lsfesco", description: "Hi I am sfdsdfsdfndrei, I am a student at UTM and I would fit for your gig as I have knowledge in databases and servers.")
 
 let notifications = [notifInfo1, notifInfo2]
+
+let jobf = JobOfferDetailsModel(id: 1, jobName: "Nany", wage: 50, userName: "Ana Maria", description: "asdasdasdasdasdasd", category: "LADDER", location: "Chisinau,Moldova", date: "12-08-2022", booked: true)
+
+let employerModel = EmployerAcceptDetailsModel(id: "1", userName: "Nina Nina", skills: ["piano", "acting"], age: "22", description: "Very very clever and very very smart", educationDetails: ["utm", "dond"], experiences: ["maib"], phoneNumber: "+37379342698", jobId: 2)

@@ -1,13 +1,13 @@
 //
-//  AddService.swift
+//  WorkerProfileService.swift
 //  Gig.md
 //
-//  Created by Victoria Belinschi on 05.06.2022.
+//  Created by Victoria Belinschi on 09.06.2022.
 //
 
 import Foundation
 
-class AddService {
+class WorkerProfileService {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     

@@ -16,8 +16,8 @@ class SignUpService {
     // MARK: - Constants and Variables
     
     private enum APIConstants {
-        static let url = "http://localhost:8080/api/auth/sign_in"
-        static let path = ""
+        static let url = "http://gigmd2-env.eba-ajmjrmc5.us-east-1.elasticbeanstalk.com/api/"
+        static let path = "sign_in"
         static let userNameParameter = "Username"
         static let passwordParameter = "Password"
     }
@@ -37,14 +37,15 @@ class SignUpService {
         do {
             print(credentials)
             let data = try encoder.encode(credentials)
-            networkService.post(url: "http://localhost:8080/api/sign_in",
+            networkService.post(url: APIConstants.url,
                                 path: APIConstants.path,
                                 body: data,
-                                httpHeaders: ["Content-Type": "application/json;"]) { result in
+                                httpHeaders: ["Content-Type": "application/json"]) { result in
                 switch result {
                 case .success(let data):
                     if let decodedData = try? self.decoder.decode(ResponseModel.self, from: data) {
                         completion(.success(decodedData))
+                        print(decodedData)
                     }
                 case .failure(let error):
                     print(error)

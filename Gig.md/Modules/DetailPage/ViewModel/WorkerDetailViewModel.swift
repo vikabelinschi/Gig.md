@@ -17,7 +17,9 @@ import Foundation
         service.getWorkerDetail(workerId: workerId) { result in
             switch result {
             case .success(let response):
-                self.worker = response
+                DispatchQueue.main.async {
+                    self.worker = response
+                }
             case .failure(let error):
                 print(error)
             }
